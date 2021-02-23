@@ -22,16 +22,17 @@ h3 {
 h4 {
   color: #BFBFBD;
   font-family: Open Sans;
+
 }
 
 aside {
   background-color: #1F1F3D;
-  padding: 50px;
+  padding: 10px 100px 0 20px;
 }
 
 .starred-ideas-btn {
-  background-color: #A9AAD2;
   color: #E9E9F3;
+  background-color: #5356A4;
     font-weight: bold;
 }
 
@@ -45,16 +46,23 @@ form {
 }
 
 label {
-  text-align: left;
+  padding-right: 110px;
 }
 
 main {
   width: 100%;
 }
 
-.search-icon {
+img,
+.search-cards {
   display: inline-block;
 }
+
+.save-idea-btn {
+  background-color: #1F1F3D;
+  color: #E9E9F3;
+}
+
 
 .saved-cards {
   background-color: #EAEAF4;
@@ -62,6 +70,9 @@ main {
   /* margin-right: auto; */
 }
 
-.search-icon {
+img {
+  display:inline;
   width: 25px;
+  background: #1F1F3D;
+  padding: 3px;
 }
