@@ -3,37 +3,45 @@
 } */
 
 body {
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   display: flex;
   height: 100vh;
+  margin: 0;
 }
 
 h3 {
   color: #E9E9F3;
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-weight: bold;
+  margin: 6%;
 }
 
 .aside-container {
   border-bottom: 2px solid #353567;
   border-top: 2px solid #353567;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
+
 
 h4 {
   color: #BFBFBD;
-  font-family: Open Sans;
-
+  font-family: 'Open Sans';
+  margin-left: 6%;
 }
 
 aside {
   background-color: #1F1F3D;
-  padding: 10px 100px 0 20px;
+  width: 19%;
 }
 
 .starred-ideas-btn {
   color: #E9E9F3;
   background-color: #5356A4;
-    font-weight: bold;
+  margin: 0% 6% 10% 6%;
+  padding: 3%;
+  font-size: 16px;
 }
 
 form {
@@ -43,17 +51,25 @@ form {
   justify-content: center;
   align-items: center;
   height: 50%;
+
+}
+form:nth-child(2) {
+
+}
+
+.title-text {
+  margin-right: 8%;
 }
 
 label {
-  padding-right: 110px;
+  margin-right: 7.5%;
 }
+
 
 main {
   width: 100%;
 }
 
-img,
 .search-cards {
   display: inline-block;
 }
@@ -61,6 +77,10 @@ img,
 .save-idea-btn {
   background-color: #1F1F3D;
   color: #E9E9F3;
+  width: 30%;
+  height: 21%;
+  border-radius: 5px;
+  font-family:
 }
 
 
@@ -71,7 +91,7 @@ img,
 }
 
 img {
-  display:inline;
+  display: inline-block;
   width: 25px;
   background: #1F1F3D;
   padding: 3px;
