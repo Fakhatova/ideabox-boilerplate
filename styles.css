@@ -1,0 +1,78 @@
+/* * {
+  border: 1px solid black;
+} */
+
+body {
+  font-family: Open Sans;
+  display: flex;
+  height: 100vh;
+}
+
+h3 {
+  color: #E9E9F3;
+  font-family: Open Sans;
+  font-weight: bold;
+}
+
+.aside-container {
+  border-bottom: 2px solid #353567;
+  border-top: 2px solid #353567;
+}
+
+h4 {
+  color: #BFBFBD;
+  font-family: Open Sans;
+
+}
+
+aside {
+  background-color: #1F1F3D;
+  padding: 10px 100px 0 20px;
+}
+
+.starred-ideas-btn {
+  color: #E9E9F3;
+  background-color: #5356A4;
+    font-weight: bold;
+}
+
+form {
+  background-color: #A9AAD2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+
+label {
+  padding-right: 110px;
+}
+
+main {
+  width: 100%;
+}
+
+img,
+.search-cards {
+  display: inline-block;
+}
+
+.save-idea-btn {
+  background-color: #1F1F3D;
+  color: #E9E9F3;
+}
+
+
+.saved-cards {
+  background-color: #EAEAF4;
+  height: 50%;
+  /* margin-right: auto; */
+}
+
+img {
+  display:inline;
+  width: 25px;
+  background: #1F1F3D;
+  padding: 3px;
+}

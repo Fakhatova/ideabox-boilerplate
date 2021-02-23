@@ -8,21 +8,26 @@
   <body>
     <aside>
       <h3>IdeaBox</h3>
-      <h4>Filter Starred Ideas</h4>
-      <button class="starred-ideas-btn">Show Starred Ideas</button>
+        <div class="aside-container">
+          <h4>Filter Starred Ideas</h4>
+          <button class="starred-ideas-btn">Show Starred Ideas</button>
+        </div>
     </aside>
-    <form action="" class="user-idea-form">
-      <label for="title">Title</label>
-      <input type="text" name="title" id="userCardTitle" value="">
-      <label for="body">Body</label>
-      <input type="text" name="body" id="userCardBody" value="">
-      <button class="save-idea-btn">Save</button>
-      <!-- <button class="search-ideas-btn" ></button> -->
-      <input type="image" id="searchImg" src="file:///Users/ericrabun/Downloads/search.svg">
-      <input type="search" placeholder="Search ideas">
-    </form>
-    <section class="saved-cards">
-    </section>
+    <main>
+      <form action="" class="user-idea-form">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="userCardTitle" value="">
+        <label for="body">Body</label>
+        <input type="text" name="body" id="userCardBody" value="">
+        <button class="save-idea-btn">Save</button>
+        <!-- <button class="search-ideas-btn" ></button> -->
+        <img src="https://drive.google.com/uc?export=view&id=1vblRBbEK9Hk8tiqteZ-65a1u2dJGtEDa" alt="search icon">
+        <!-- <input class="search-icon" type="image" id="searchImg" src="https://drive.google.com/uc?export=view&id=1vblRBbEK9Hk8tiqteZ-65a1u2dJGtEDa"> -->
+        <input class="search-cards"type="search" placeholder="Search ideas">
+      </form>
+      <section class="saved-cards">
+      </section>
+    </main>
     <script src="./src/main.js"></script>
   </body>
 </html>
