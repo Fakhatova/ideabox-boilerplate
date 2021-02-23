@@ -1,0 +1,67 @@
+/* * {
+  border: 1px solid black;
+} */
+
+body {
+  font-family: Open Sans;
+  display: flex;
+  height: 100vh;
+}
+
+h3 {
+  color: #E9E9F3;
+  font-family: Open Sans;
+  font-weight: bold;
+}
+
+.aside-container {
+  border-bottom: 2px solid #353567;
+  border-top: 2px solid #353567;
+}
+
+h4 {
+  color: #BFBFBD;
+  font-family: Open Sans;
+}
+
+aside {
+  background-color: #1F1F3D;
+  padding: 50px;
+}
+
+.starred-ideas-btn {
+  background-color: #A9AAD2;
+  color: #E9E9F3;
+    font-weight: bold;
+}
+
+form {
+  background-color: #A9AAD2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+
+label {
+  text-align: left;
+}
+
+main {
+  width: 100%;
+}
+
+.search-icon {
+  display: inline-block;
+}
+
+.saved-cards {
+  background-color: #EAEAF4;
+  height: 50%;
+  /* margin-right: auto; */
+}
+
+.search-icon {
+  width: 25px;
+}
