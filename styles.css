@@ -6,6 +6,7 @@ body {
   font-family: Open Sans;
   display: flex;
   height: 100vh;
+  margin: 0
 }
 
 h3 {
@@ -27,7 +28,7 @@ h4 {
 
 aside {
   background-color: #1F1F3D;
-  padding: 10px 100px 0 20px;
+  width: 19%;
 }
 
 .starred-ideas-btn {
