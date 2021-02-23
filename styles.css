@@ -3,15 +3,15 @@
 } */
 
 body {
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   display: flex;
   height: 100vh;
-  margin: 0
+  margin: 0;
 }
 
 h3 {
   color: #E9E9F3;
-  font-family: Open Sans;
+  font-family: 'Open Sans';
   font-weight: bold;
   margin: 6%;
 }
@@ -27,8 +27,8 @@ h3 {
 
 h4 {
   color: #BFBFBD;
-  font-family: Open Sans;
-   margin-left: 6%;
+  font-family: 'Open Sans';
+  margin-left: 6%;
 }
 
 aside {
@@ -53,6 +53,9 @@ form {
   height: 50%;
 
 }
+form:nth-child(2) {
+
+}
 
 .title-text {
   margin-right: 8%;
@@ -67,7 +70,6 @@ main {
   width: 100%;
 }
 
-img,
 .search-cards {
   display: inline-block;
 }
@@ -75,6 +77,10 @@ img,
 .save-idea-btn {
   background-color: #1F1F3D;
   color: #E9E9F3;
+  width: 30%;
+  height: 21%;
+  border-radius: 5px;
+  font-family:
 }
 
 
@@ -85,7 +91,7 @@ img,
 }
 
 img {
-  display:inline;
+  display: inline-block;
   width: 25px;
   background: #1F1F3D;
   padding: 3px;
