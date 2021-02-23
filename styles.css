@@ -13,17 +13,22 @@ h3 {
   color: #E9E9F3;
   font-family: Open Sans;
   font-weight: bold;
+  margin: 6%;
 }
 
 .aside-container {
   border-bottom: 2px solid #353567;
   border-top: 2px solid #353567;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
+
 
 h4 {
   color: #BFBFBD;
   font-family: Open Sans;
-
+   margin-left: 6%;
 }
 
 aside {
@@ -34,7 +39,9 @@ aside {
 .starred-ideas-btn {
   color: #E9E9F3;
   background-color: #5356A4;
-    font-weight: bold;
+  margin: 0% 6% 10% 6%;
+  padding: 3%;
+  font-size: 16px;
 }
 
 form {
@@ -44,11 +51,17 @@ form {
   justify-content: center;
   align-items: center;
   height: 50%;
+
+}
+
+.title-text {
+  margin-right: 8%;
 }
 
 label {
-  padding-right: 110px;
+  margin-right: 7.5%;
 }
+
 
 main {
   width: 100%;
