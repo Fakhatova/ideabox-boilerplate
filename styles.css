@@ -113,13 +113,14 @@ label {
 .search-ideas {
   display:flex;
   background-color: #A9AAD2;
+  border: 2px solid #5356A4;
+  border-radius: 5px;
 }
 
 
 .search-cards {
   width: 405px;
   height: 75px;
-  border-radius: 0 5px 5px 0;
   font-size: x-large;
   font-family: 'Open Sans';
 }
@@ -127,10 +128,9 @@ label {
 
 img {
   width: 50px;
-  height: 30px;
+  height: 31px;
   background: #1F1F3D;
   padding: 22px;
-  border-radius: 5px 0 0 5px;
 }
 
 
