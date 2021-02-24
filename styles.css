@@ -52,7 +52,8 @@ h4 {
   font-weight: bold;
   font-size: x-large;
   padding: 7px 0;
-  border: 2px solid #5356A4;
+  border: 2px solid #353567;
+  border-radius: 5px;
 }
 
 
