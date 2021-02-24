@@ -9,12 +9,22 @@ body {
   margin: 0;
 }
 
+/* **************ASIDE************** */
+
+aside {
+  background-color: #1F1F3D;
+  width: 550px;
+}
+
+
 h3 {
   color: #E9E9F3;
   font-family: 'Open Sans';
   font-weight: bold;
-  margin: 6%;
+  margin: 30px 25px 30px;
+  font-size: x-large;
 }
+
 
 .aside-container {
   border-bottom: 2px solid #353567;
@@ -29,49 +39,58 @@ h4 {
   color: #BFBFBD;
   font-family: 'Open Sans';
   margin-left: 6%;
+  padding: 10px 0 15px 0;
+  font-size: larger;
 }
 
-aside {
-  background-color: #1F1F3D;
-  width: 19%;
-}
 
 .starred-ideas-btn {
   color: #E9E9F3;
   background-color: #5356A4;
-  margin: 0px 15px 17px 15px;
-  padding: 5px;
-  font-size: 16px;
+  margin: 0px 15px 45px 15px;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  font-size: x-large;
 }
 
-form {
-  background-color: #A9AAD2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 50%;
 
-}
-
-.title-text {
-  margin-right: 8%;
-}
-
-label {
-  margin-right: 7.5%;
-}
-
+/* **************FORM************** */
 
 main {
   width: 100%;
 }
 
-.search-cards {
-  width: 405px;
-  height: 75px;
-  border-radius: 0 5px 5px 0;
+
+form {
+  background-color: #A9AAD2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 600px;
 }
+
+
+label {
+  margin-right: 460px;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.title-text,
+.body-text {
+  width: 500px;
+  height: 75px;
+  border-radius: 5px;
+}
+
+
+.body-text {
+  height: 150px;
+}
+
 
 .save-idea-btn {
   background-color: #1F1F3D;
@@ -86,15 +105,20 @@ main {
 }
 
 
-.saved-cards {
-  background-color: #EAEAF4;
+.search-ideas {
+  display:flex;
+  background-color: #A9AAD2;
 }
 
-.search-ideas {
-    display:flex;
-    background-color: #A9AAD2;
 
-  }
+.search-cards {
+  width: 405px;
+  height: 75px;
+  border-radius: 0 5px 5px 0;
+  font-size: x-large;
+  font-family: 'Open Sans';
+}
+
 
 img {
   width: 50px;
@@ -102,4 +126,11 @@ img {
   background: #1F1F3D;
   padding: 22px;
   border-radius: 5px 0 0 5px;
+}
+
+
+/* **************SAVED-CARDS-SECTION************** */
+
+.saved-cards {
+  background-color: #EAEAF4;
 }
