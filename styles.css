@@ -39,8 +39,8 @@ aside {
 .starred-ideas-btn {
   color: #E9E9F3;
   background-color: #5356A4;
-  margin: 0% 6% 10% 6%;
-  padding: 3%;
+  margin: 0px 15px 17px 15px;
+  padding: 5px;
   font-size: 16px;
 }
 
@@ -51,9 +51,6 @@ form {
   justify-content: center;
   align-items: center;
   height: 50%;
-
-}
-form:nth-child(2) {
 
 }
 
@@ -71,28 +68,38 @@ main {
 }
 
 .search-cards {
-  display: inline-block;
+  width: 405px;
+  height: 75px;
+  border-radius: 0 5px 5px 0;
 }
 
 .save-idea-btn {
   background-color: #1F1F3D;
   color: #E9E9F3;
-  width: 30%;
-  height: 21%;
+  width: 500px;
+  height: 75px;
   border-radius: 5px;
-  font-family:
+  font-weight: bold;
+  font-size: x-large;
+  font-family: 'Open Sans';
+  margin: 25px;
 }
 
 
 .saved-cards {
   background-color: #EAEAF4;
-  height: 50%;
-  /* margin-right: auto; */
 }
 
+.search-ideas {
+    display:flex;
+    background-color: #A9AAD2;
+
+  }
+
 img {
-  display: inline-block;
-  width: 25px;
+  width: 50px;
+  height: 30px;
   background: #1F1F3D;
-  padding: 3px;
+  padding: 22px;
+  border-radius: 5px 0 0 5px;
 }
