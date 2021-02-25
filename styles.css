@@ -9,11 +9,17 @@ body {
   margin: 0;
 }
 
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
 /* **************ASIDE************** */
 
 aside {
   background-color: #1F1F3D;
-  width: 550px;
+  width: 30%;
 }
 
 
@@ -75,7 +81,7 @@ form {
 
 
 label {
-  margin-right: 460px;
+  margin-right: 46%;
   font-family: 'Open Sans';
   font-weight: bold;
   font-size: 20px;
@@ -84,7 +90,7 @@ label {
 
 .title-text,
 .body-text {
-  width: 500px;
+  width: 50%;
   height: 75px;
   border-radius: 5px;
   border: 2px solid #5356A4;
@@ -99,7 +105,7 @@ label {
 .save-idea-btn {
   background-color: #1F1F3D;
   color: #E9E9F3;
-  width: 500px;
+  width: 50%;
   height: 75px;
   border-radius: 5px;
   border: 2px solid #5356A4;
@@ -115,11 +121,12 @@ label {
   background-color: #A9AAD2;
   border: 2px solid #5356A4;
   border-radius: 5px;
+  width: 50%
 }
 
 
 .search-cards {
-  width: 405px;
+  width: -webkit-fill-available;
   height: 75px;
   font-size: x-large;
   font-family: 'Open Sans';
@@ -135,7 +142,43 @@ img {
 
 
 /* **************SAVED-CARDS-SECTION************** */
+.saved-cards-grid {
+  background-color: #EAEAF4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+}
 
 .saved-cards {
-  background-color: #EAEAF4;
+
+}
+
+
+.idea-card-body {
+  height: 150px;
+  width: 150px;
+  overflow: auto;
+
+}
+
+.favorite-delete {
+  background-color: #1F1F3D;
+  color: #ffffff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.idea-title-body {
+  background-color: #FFFFFF;
+  color: #1F1F3D;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start
+}
+
+.comment-bar {
+  background-color: #5356A4;
+  padding: 20px
 }
