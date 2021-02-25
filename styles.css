@@ -1,6 +1,6 @@
-* {
+/* * {
   border: 1px solid black;
-}
+} */
 
 body {
   font-family: 'Open Sans';
@@ -157,20 +157,25 @@ label {
 .idea-title-body {
   background-color: #FFFFFF;
   color: #1F1F3D;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   height: 33%;
   font-size: xx-large;
 }
 
 
-.idea-card-body {
-  height: 150px; 
-  width: 100%;
-  overflow: auto;
-
+.idea-card-title {
+  font-weight: bold;
+  padding: 15px;
+  margin: 0;
 }
+
+
+.idea-card-body {
+  height: 277px;
+  width: 95%;
+  overflow: auto;
+  margin: 0px 0 0 15px;
+}
+
 
 .favorite-delete {
   background-color: #1F1F3D;
@@ -198,9 +203,4 @@ span {
   color: #E9E9F3;
   font-weight: bold;
   font-size: x-large;
-}
-
-
-.idea-card-title {
-  font-weight: bold;
 }
