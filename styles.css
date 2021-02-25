@@ -1,19 +1,13 @@
-/* * {
+* {
   border: 1px solid black;
-} */
+}
 
 body {
   font-family: 'Open Sans';
   display: flex;
-  height: 100vh;
   margin: 0;
 }
 
-body,
-html {
-  margin: 0;
-  padding: 0;
-}
 
 /* **************ASIDE************** */
 
@@ -81,7 +75,7 @@ form {
 
 
 label {
-  margin-right: 46%;
+  margin-right: 42%;
   font-family: 'Open Sans';
   font-weight: bold;
   font-size: 20px;
@@ -90,7 +84,7 @@ label {
 
 .title-text,
 .body-text {
-  width: 50%;
+  width: 45%;
   height: 75px;
   border-radius: 5px;
   border: 2px solid #5356A4;
@@ -105,7 +99,7 @@ label {
 .save-idea-btn {
   background-color: #1F1F3D;
   color: #E9E9F3;
-  width: 50%;
+  width: 45%;
   height: 75px;
   border-radius: 5px;
   border: 2px solid #5356A4;
@@ -121,7 +115,7 @@ label {
   background-color: #A9AAD2;
   border: 2px solid #5356A4;
   border-radius: 5px;
-  width: 50%
+  width: 45%
 }
 
 
@@ -133,7 +127,7 @@ label {
 }
 
 
-img {
+.magnifying-img {
   width: 50px;
   height: 31px;
   background: #1F1F3D;
@@ -150,14 +144,30 @@ img {
   padding: 20px;
 }
 
-.saved-cards {
+.favorited-star {
+  height: 95%;
+}
 
+.delete-card-x {
+  height: 64%;
+  margin: 3%;
+}
+
+
+.idea-title-body {
+  background-color: #FFFFFF;
+  color: #1F1F3D;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 33%;
+  font-size: xx-large;
 }
 
 
 .idea-card-body {
-  height: 150px;
-  width: 150px;
+  height: 150px; 
+  width: 100%;
   overflow: auto;
 
 }
@@ -165,20 +175,32 @@ img {
 .favorite-delete {
   background-color: #1F1F3D;
   color: #ffffff;
-  padding: 20px;
+  height: 6%;
   display: flex;
   justify-content: space-between;
 }
 
-.idea-title-body {
-  background-color: #FFFFFF;
-  color: #1F1F3D;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start
-}
 
 .comment-bar {
   background-color: #5356A4;
-  padding: 20px
+  height: 6%;
+  display: flex;
+  align-items: center;
+}
+
+
+.add-comment {
+  height: 97%;
+}
+
+
+span {
+  color: #E9E9F3;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+
+.idea-card-title {
+  font-weight: bold;
 }
