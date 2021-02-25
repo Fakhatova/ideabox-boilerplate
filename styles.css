@@ -136,8 +136,12 @@ label {
 
 
 /* **************SAVED-CARDS-SECTION************** */
-.saved-cards-grid {
+.wrapper {
   background-color: #EAEAF4;
+  height: 100%;
+}
+.saved-cards-grid {
+  background-color: #FFFFFF;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
