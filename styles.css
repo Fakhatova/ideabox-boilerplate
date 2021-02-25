@@ -5,15 +5,15 @@
 body {
   font-family: 'Open Sans';
   display: flex;
-  height: 100vh;
   margin: 0;
 }
+
 
 /* **************ASIDE************** */
 
 aside {
   background-color: #1F1F3D;
-  width: 550px;
+  width: 30%;
 }
 
 
@@ -75,7 +75,7 @@ form {
 
 
 label {
-  margin-right: 460px;
+  margin-right: 42%;
   font-family: 'Open Sans';
   font-weight: bold;
   font-size: 20px;
@@ -84,7 +84,7 @@ label {
 
 .title-text,
 .body-text {
-  width: 500px;
+  width: 45%;
   height: 75px;
   border-radius: 5px;
   border: 2px solid #5356A4;
@@ -99,7 +99,7 @@ label {
 .save-idea-btn {
   background-color: #1F1F3D;
   color: #E9E9F3;
-  width: 500px;
+  width: 45%;
   height: 75px;
   border-radius: 5px;
   border: 2px solid #5356A4;
@@ -115,18 +115,19 @@ label {
   background-color: #A9AAD2;
   border: 2px solid #5356A4;
   border-radius: 5px;
+  width: 45%
 }
 
 
 .search-cards {
-  width: 405px;
+  width: -webkit-fill-available;
   height: 75px;
   font-size: x-large;
   font-family: 'Open Sans';
 }
 
 
-img {
+.magnifying-img {
   width: 50px;
   height: 31px;
   background: #1F1F3D;
@@ -135,7 +136,71 @@ img {
 
 
 /* **************SAVED-CARDS-SECTION************** */
-
-.saved-cards {
+.saved-cards-grid {
   background-color: #EAEAF4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.favorited-star {
+  height: 95%;
+}
+
+.delete-card-x {
+  height: 64%;
+  margin: 3%;
+}
+
+
+.idea-title-body {
+  background-color: #FFFFFF;
+  color: #1F1F3D;
+  height: 33%;
+  font-size: xx-large;
+}
+
+
+.idea-card-title {
+  font-weight: bold;
+  padding: 15px;
+  margin: 0;
+}
+
+
+.idea-card-body {
+  height: 277px;
+  width: 95%;
+  overflow: auto;
+  margin: 0px 0 0 15px;
+}
+
+
+.favorite-delete {
+  background-color: #1F1F3D;
+  color: #ffffff;
+  height: 6%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.comment-bar {
+  background-color: #5356A4;
+  height: 6%;
+  display: flex;
+  align-items: center;
+}
+
+
+.add-comment {
+  height: 97%;
+}
+
+
+span {
+  color: #E9E9F3;
+  font-weight: bold;
+  font-size: x-large;
 }
