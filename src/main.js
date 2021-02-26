@@ -11,21 +11,21 @@ ideaForm.addEventListener('keydown', checkUserInputs);
 saveIdeaBtn.addEventListener('click', createNewIdea);
 
 
-
 function checkUserInputs() {
-  if (userInputTitle.value && userInputBody.value)  {
+  if (userInputTitle.value && userInputBody.value) {
     saveIdeaBtn.classList.add('activate');
+  }
 }
-}
+
 
 function createNewIdea() {
   event.preventDefault();
   if (userInputTitle.value && userInputBody.value) {
-  var newIdeaCard = new Idea(userInputTitle.value, userInputBody.value);
-  addCard()
-  clearInputFields();
-  saveIdeaBtn.classList.remove('activate');
-}
+    var newIdeaCard = new Idea(userInputTitle.value, userInputBody.value);
+    addCard()
+    clearInputFields();
+    saveIdeaBtn.classList.remove('activate');
+  }
 }
 
 
@@ -47,6 +47,7 @@ function addCard() {
   </section>
   `
 }
+
 
 function clearInputFields() {
   userInputTitle.value = "";
