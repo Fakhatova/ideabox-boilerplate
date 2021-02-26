@@ -8,15 +8,12 @@ body {
   margin: 0;
 }
 
-
 /* **************ASIDE************** */
 
 aside {
   background-color: #1F1F3D;
   width: 30%;
 }
-
-
 h3 {
   color: #E9E9F3;
   font-family: 'Open Sans';
@@ -24,8 +21,6 @@ h3 {
   margin: 30px 25px 30px;
   font-size: x-large;
 }
-
-
 .aside-container {
   border-bottom: 2px solid #353567;
   border-top: 2px solid #353567;
@@ -33,8 +28,6 @@ h3 {
   display: flex;
   flex-direction: column;
 }
-
-
 h4 {
   color: #BFBFDD;
   font-family: 'Open Sans';
@@ -42,8 +35,6 @@ h4 {
   padding: 10px 0 15px 0;
   font-size: larger;
 }
-
-
 .starred-ideas-btn {
   color: #E9E9F3;
   background-color: #5356A4;
@@ -56,14 +47,10 @@ h4 {
   border-radius: 5px;
 }
 
-
 /* **************FORM************** */
-
 main {
   width: 100%;
 }
-
-
 form {
   background-color: #A9AAD2;
   display: flex;
@@ -72,16 +59,12 @@ form {
   align-items: center;
   height: 600px;
 }
-
-
 label {
   margin-right: 42%;
   font-family: 'Open Sans';
   font-weight: bold;
   font-size: 20px;
 }
-
-
 .title-text,
 .body-text {
   width: 45%;
@@ -89,13 +72,9 @@ label {
   border-radius: 5px;
   border: 2px solid #5356A4;
 }
-
-
 .body-text {
   height: 150px;
 }
-
-
 .save-idea-btn {
   background-color: #1F1F3D;
   color: #E9E9F3;
@@ -108,8 +87,6 @@ label {
   font-family: 'Open Sans';
   margin: 25px;
 }
-
-
 .search-ideas {
   display:flex;
   background-color: #A9AAD2;
@@ -117,53 +94,33 @@ label {
   border-radius: 5px;
   width: 45%
 }
-
-
 .search-cards {
   width: -webkit-fill-available;
   height: 75px;
   font-size: x-large;
   font-family: 'Open Sans';
 }
-
-
 .magnifying-img {
   width: 50px;
   height: 31px;
   background: #1F1F3D;
   padding: 22px;
 }
-
-
 /* **************SAVED-CARDS-SECTION************** */
-.wrapper {
-  background-color: #EAEAF4;
-  height: 100%;
-}
-
-.hidden {
-  display:none;
-}
-
 .saved-cards-grid {
-  background-color: #FFFFFF;
+  background-color: #EAEAF4;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   padding: 20px;
-  height:100%;
 }
-
 .favorited-star {
   height: 95%;
 }
-
 .delete-card-x {
   height: 64%;
   margin: 3%;
 }
-
-
 .idea-title-body {
   background-color: #FFFFFF;
   color: #1F1F3D;
@@ -182,7 +139,8 @@ label {
 .idea-card-body {
   height: 277px;
   width: 95%;
-  overflow: auto;
+  overflow: scroll;
+
   margin: 0px 0 0 15px;
 }
 
@@ -194,21 +152,15 @@ label {
   display: flex;
   justify-content: space-between;
 }
-
-
 .comment-bar {
   background-color: #5356A4;
   height: 6%;
   display: flex;
   align-items: center;
 }
-
-
 .add-comment {
   height: 97%;
 }
-
-
 span {
   color: #E9E9F3;
   font-weight: bold;
