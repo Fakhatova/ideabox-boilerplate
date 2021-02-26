@@ -47,3 +47,8 @@ function addCard() {
   </section>
   `
 }
+
+function clearInputFields() {
+  userInputTitle.value = "";
+  userInputBody.value = "";
+}
