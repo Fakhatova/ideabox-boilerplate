@@ -3,23 +3,21 @@ var userInputBody = document.querySelector('#userCardBody');
 var starredIdeaBtn = document.querySelector('.starred-ideas-btn');
 var saveIdeaBtn = document.querySelector('.save-idea-btn');
 var savedIdeaCards = [];
-
+var ideaForm = document.querySelector('.user-idea-form')
 var savedCardsGrid = document.querySelector('.saved-cards-grid')
 
 
-
-saveIdeaBtn.addEventListener('click', createNewIdea);
-// starredIdeaBtn.addEventListener('click', )
+ideaForm.addEventListener('keydown', checkUserInputs);
 
 
 
 
-function createNewIdea() {
-  event.preventDefault();
-  var newIdeaCard = new Idea(userInputTitle.value, userInputBody.value);
-  addCard()
-  return newIdeaCard;
+function checkUserInputs() {
+  if (userInputTitle.value && userInputBody.value)  {
+    saveIdeaBtn.classList.add('activate');
 }
+}
+
 
 
 function addCard() {

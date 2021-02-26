@@ -76,8 +76,8 @@ label {
   height: 150px;
 }
 .save-idea-btn {
-  background-color: #1F1F3D;
-  color: #E9E9F3;
+  background-color: #5356A4;
+  color: #EAEAF4;
   width: 45%;
   height: 75px;
   border-radius: 5px;
@@ -86,7 +86,14 @@ label {
   font-size: x-large;
   font-family: 'Open Sans';
   margin: 25px;
+  cursor: not-allowed;
 }
+
+.activate {
+  background-color: #1F1F3D;
+  cursor: pointer;
+}
+
 .search-ideas {
   display:flex;
   background-color: #A9AAD2;
@@ -113,6 +120,7 @@ label {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   padding: 20px;
+  height: 100%;
 }
 .favorited-star {
   height: 95%;
@@ -165,4 +173,9 @@ span {
   color: #E9E9F3;
   font-weight: bold;
   font-size: x-large;
+}
+
+
+.hidden {
+  display: none!important;
 }
