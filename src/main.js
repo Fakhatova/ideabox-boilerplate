@@ -8,7 +8,7 @@ var savedCardsGrid = document.querySelector('.saved-cards-grid')
 
 
 ideaForm.addEventListener('keydown', checkUserInputs);
-
+saveIdeaBtn.addEventListener('click', createNewIdea);
 
 
 
@@ -18,6 +18,15 @@ function checkUserInputs() {
 }
 }
 
+function createNewIdea() {
+  event.preventDefault();
+  if (userInputTitle.value && userInputBody.value) {
+  var newIdeaCard = new Idea(userInputTitle.value, userInputBody.value);
+  addCard()
+  clearInputFields();
+  saveIdeaBtn.classList.remove('activate');
+}
+}
 
 
 function addCard() {
