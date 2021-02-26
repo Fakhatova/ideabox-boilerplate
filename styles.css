@@ -14,6 +14,8 @@ aside {
   background-color: #1F1F3D;
   width: 30%;
 }
+
+
 h3 {
   color: #E9E9F3;
   font-family: 'Open Sans';
@@ -21,6 +23,8 @@ h3 {
   margin: 30px 25px 30px;
   font-size: x-large;
 }
+
+
 .aside-container {
   border-bottom: 2px solid #353567;
   border-top: 2px solid #353567;
@@ -28,6 +32,8 @@ h3 {
   display: flex;
   flex-direction: column;
 }
+
+
 h4 {
   color: #BFBFDD;
   font-family: 'Open Sans';
@@ -35,6 +41,8 @@ h4 {
   padding: 10px 0 15px 0;
   font-size: larger;
 }
+
+
 .starred-ideas-btn {
   color: #E9E9F3;
   background-color: #5356A4;
@@ -51,6 +59,8 @@ h4 {
 main {
   width: 100%;
 }
+
+
 form {
   background-color: #A9AAD2;
   display: flex;
@@ -59,12 +69,16 @@ form {
   align-items: center;
   height: 600px;
 }
+
+
 label {
   margin-right: 42%;
   font-family: 'Open Sans';
   font-weight: bold;
   font-size: 20px;
 }
+
+
 .title-text,
 .body-text {
   width: 45%;
@@ -72,12 +86,16 @@ label {
   border-radius: 5px;
   border: 2px solid #5356A4;
 }
+
+
 .body-text {
   height: 150px;
 }
+
+
 .save-idea-btn {
-  background-color: #1F1F3D;
-  color: #E9E9F3;
+  background-color: #5356A4;
+  color: #EAEAF4;
   width: 45%;
   height: 75px;
   border-radius: 5px;
@@ -86,7 +104,16 @@ label {
   font-size: x-large;
   font-family: 'Open Sans';
   margin: 25px;
+  cursor: not-allowed;
 }
+
+
+.activate {
+  background-color: #1F1F3D;
+  cursor: pointer;
+}
+
+
 .search-ideas {
   display:flex;
   background-color: #A9AAD2;
@@ -94,18 +121,23 @@ label {
   border-radius: 5px;
   width: 45%
 }
+
+
 .search-cards {
   width: -webkit-fill-available;
   height: 75px;
   font-size: x-large;
   font-family: 'Open Sans';
 }
+
+
 .magnifying-img {
   width: 50px;
   height: 31px;
   background: #1F1F3D;
   padding: 22px;
 }
+
 /* **************SAVED-CARDS-SECTION************** */
 .saved-cards-grid {
   background-color: #EAEAF4;
@@ -113,14 +145,21 @@ label {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   padding: 20px;
+  height: 100%;
 }
+
+
 .favorited-star {
   height: 95%;
 }
+
+
 .delete-card-x {
   height: 64%;
   margin: 3%;
 }
+
+
 .idea-title-body {
   background-color: #FFFFFF;
   color: #1F1F3D;
@@ -152,17 +191,28 @@ label {
   display: flex;
   justify-content: space-between;
 }
+
+
 .comment-bar {
   background-color: #5356A4;
   height: 6%;
   display: flex;
   align-items: center;
 }
+
+
 .add-comment {
   height: 97%;
 }
+
+
 span {
   color: #E9E9F3;
   font-weight: bold;
   font-size: x-large;
+}
+
+
+.hidden {
+  display: none!important;
 }

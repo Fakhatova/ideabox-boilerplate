@@ -3,22 +3,29 @@ var userInputBody = document.querySelector('#userCardBody');
 var starredIdeaBtn = document.querySelector('.starred-ideas-btn');
 var saveIdeaBtn = document.querySelector('.save-idea-btn');
 var savedIdeaCards = [];
-
+var ideaForm = document.querySelector('.user-idea-form')
 var savedCardsGrid = document.querySelector('.saved-cards-grid')
 
 
-
+ideaForm.addEventListener('keydown', checkUserInputs);
 saveIdeaBtn.addEventListener('click', createNewIdea);
-// starredIdeaBtn.addEventListener('click', )
 
 
+function checkUserInputs() {
+  if (userInputTitle.value && userInputBody.value) {
+    saveIdeaBtn.classList.add('activate');
+  }
+}
 
 
 function createNewIdea() {
   event.preventDefault();
-  var newIdeaCard = new Idea(userInputTitle.value, userInputBody.value);
-  addCard()
-  return newIdeaCard;
+  if (userInputTitle.value && userInputBody.value) {
+    var newIdeaCard = new Idea(userInputTitle.value, userInputBody.value);
+    addCard()
+    clearInputFields();
+    saveIdeaBtn.classList.remove('activate');
+  }
 }
 
 
@@ -39,4 +46,10 @@ function addCard() {
     </div>
   </section>
   `
+}
+
+
+function clearInputFields() {
+  userInputTitle.value = "";
+  userInputBody.value = "";
 }
