@@ -15,36 +15,29 @@ var savedIdeaCards = [];
 saveIdeaBtn.disabled = true;
 
 function checkUserInputs() {
-  for (var i = 0; i < userInputs.length; i++) {
-    if (userInputs[i].value === '') {
-      saveIdeaBtn.disabled = true;
-    } else {
-      saveIdeaBtn.disabled = false;
-    }
-  }
+  saveIdeaBtn.disabled = (userCardBody.value === '' || userCardTitle.value === '');
 }
 
 function createNewIdea() {
   event.preventDefault();
   checkUserInputs();
   var newIdeaCard = new Idea(userCardTitle.value, userCardBody.value);
-  savedIdeaCards.push(newIdeaCard);
-  addCard();
+  addCard(newIdeaCard);
   clearInputFields();
 }
 
 
-function addCard() {
-  for (var i = 0; i < savedIdeaCards.length; i++) {
-    savedCardsGrid.innerHTML += `
-    <section class="saved-cards" id="${savedIdeaCards[i].id}">
+function addCard(card) {
+  savedIdeaCards.push(card);
+  savedCardsGrid.innerHTML += `
+    <section class="saved-cards" id="${card.id}">
       <div class='favorite-delete'>
         <img class='favorited-star' src="https://drive.google.com/uc?export=view&id=1TW-aKpR_uBW0Ayp6AtTqVq5cxuX27GiH" alt="favorite star">
         <img class='delete-card-x' src="https://drive.google.com/uc?export=view&id=1DFdu572EVYb1SXhsXQ0XDqvfZ7prhJWg" alt="delete card x">
       </div>
       <article class='idea-title-body'>
-        <p class='idea-card-title'>${savedIdeaCards[i].title}</p>
-        <p class='idea-card-body'>${savedIdeaCards[i].body}</p>
+        <p class='idea-card-title'>${card.title}</p>
+        <p class='idea-card-body'>${card.body}</p>
       </article>
       <div class='comment-bar'>
         <img class='add-comment' src="https://drive.google.com/uc?export=view&id=1xk4FryiJY3UgKdzYQhKdKPBe75ubWaYt" alt="add comment">
@@ -52,7 +45,6 @@ function addCard() {
       </div>
     </section>
   `
-  }
 }
 
 
