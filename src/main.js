@@ -35,24 +35,8 @@ function renderIdeaCards() {
   // savedCardsGrid.innerHTML = '';
   var ideaCardHtml = '';
   for (var i = 0; i < savedIdeaCards.length; i++) {
-    ideaCardHtml += `
-      <section class="saved-cards" id="${savedIdeaCards[i].id}">
-        <div class='favorite-delete'>
-          <img class='favorited-star' src="${savedIdeaCards[i].star ? redStarSrc: whiteStarSrc}" alt="favorite star">
-          <img class='delete-card-x' src="https://drive.google.com/uc?export=view&id=1DFdu572EVYb1SXhsXQ0XDqvfZ7prhJWg" alt="delete card x">
-          </div>
-          <article class='idea-title-body'>
-            <p class='idea-card-title'>${savedIdeaCards[i].title}</p>
-            <p class='idea-card-body'>${savedIdeaCards[i].body}</p>
-          </article>
-        <div class='comment-bar'>
-          <img class='add-comment' src="https://drive.google.com/uc?export=view&id=1xk4FryiJY3UgKdzYQhKdKPBe75ubWaYt" alt="add comment">
-          <span>Comment</span>
-        </div>
-      </section>
-    `
-  }
-  savedCardsGrid.innerHTML = ideaCardHtml; //went from updating the Dom card# times to once
+    renderHTML(savedIdeaCards)
+  } //went from updating the Dom card# times to once
 }
 
 
@@ -98,4 +82,25 @@ function renderLocalStorageCards() {
     var key = localStorage.key(i);
     console.log(`${key}: ${localStorage.getItem(key)}`);
   }
+}
+
+function renderHTML(array) {
+  var ideaCardHtml = '';
+  ideaCardHtml += `
+    <section class="saved-cards" id="${array.id}">
+      <div class='favorite-delete'>
+        <img class='favorited-star' src="${array.star ? redStarSrc: whiteStarSrc}" alt="favorite star">
+        <img class='delete-card-x' src="https://drive.google.com/uc?export=view&id=1DFdu572EVYb1SXhsXQ0XDqvfZ7prhJWg" alt="delete card x">
+        </div>
+        <article class='idea-title-body'>
+          <p class='idea-card-title'>${array.title}</p>
+          <p class='idea-card-body'>${array.body}</p>
+        </article>
+      <div class='comment-bar'>
+        <img class='add-comment' src="https://drive.google.com/uc?export=view&id=1xk4FryiJY3UgKdzYQhKdKPBe75ubWaYt" alt="add comment">
+        <span>Comment</span>
+      </div>
+    </section>
+  `
+  savedCardsGrid.innerHTML = ideaCardHtml;
 }
