@@ -1,37 +1,38 @@
-var userInputs = document.querySelectorAll('.user-input');
-var starredIdeaBtn = document.querySelector('.starred-ideas-btn');
+// var userInputs = document.querySelectorAll('.user-input');
+var showStarredIdeaBtn = document.querySelector('.starred-ideas-btn');
 var saveIdeaBtn = document.querySelector('.save-idea-btn');
 var ideaForm = document.querySelector('.user-idea-form')
 var savedCardsGrid = document.querySelector('.saved-cards-grid')
-var userCardTitle = document.getElementById('userCardTitle');
-var userCardBody = document.getElementById('userCardBody');
-var starImageSrc = document.querySelector('.favorited-star');
+var cardTitleInput = document.getElementById('userCardTitle');
+var cardBodyInput = document.getElementById('userCardBody');
 
-ideaForm.addEventListener('keyup', checkUserInputs);
+
+ideaForm.addEventListener('keyup', saveBtnStatus);
 saveIdeaBtn.addEventListener('click', createNewIdea);
-savedCardsGrid.addEventListener('click', handleIdeaCardClick); //one function that would figure out what was clicked and then send you on to another fx
+savedCardsGrid.addEventListener('click', targetCardClick); //one function that would figure out what was clicked and then send you on to another fx
 
 var savedIdeaCards = [];
-var whiteStar = "https://drive.google.com/uc?export=view&id=1TW-aKpR_uBW0Ayp6AtTqVq5cxuX27GiH";
-var redStar = "https://drive.google.com/uc?export=view&id=13_jn9vQvAdNzdcbdRmYoR6mBOZHoeqzU";
+var whiteStarSrc = "https://drive.google.com/uc?export=view&id=1TW-aKpR_uBW0Ayp6AtTqVq5cxuX27GiH";
+var redStarSrc = "https://drive.google.com/uc?export=view&id=13_jn9vQvAdNzdcbdRmYoR6mBOZHoeqzU";
 saveIdeaBtn.disabled = true;
 
-function checkUserInputs() {
-  saveIdeaBtn.disabled = (userCardBody.value === '' || userCardTitle.value === '');
-}
-
-function createNewIdea() {
-  event.preventDefault();
-  checkUserInputs();
-  var newIdeaCard = new Idea(userCardTitle.value, userCardBody.value);
-  addCard(newIdeaCard);
-  clearInputFields();
+function saveBtnStatus() {
+  saveIdeaBtn.disabled = (cardBodyInput.value === '' || cardTitleInput.value === '');
 }
 
 function addCard(card) {
   savedIdeaCards.push(card);
   renderIdeaCards();
 }
+
+function createNewIdea() {
+  event.preventDefault();
+  saveBtnStatus();
+  var newIdeaCard = new Idea(cardTitleInput.value, cardBodyInput.value);
+  addCard(newIdeaCard);
+  clearInputFields();
+}
+
 
 function renderIdeaCards() {
   // savedCardsGrid.innerHTML = '';
@@ -40,7 +41,7 @@ function renderIdeaCards() {
     ideaCardHtml += `
       <section class="saved-cards" id="${savedIdeaCards[i].id}">
         <div class='favorite-delete'>
-          <img class='favorited-star' src="${savedIdeaCards[i].star ? redStar: whiteStar}" alt="favorite star">
+          <img class='favorited-star' src="${savedIdeaCards[i].star ? redStarSrc: whiteStarSrc}" alt="favorite star">
           <img class='delete-card-x' src="https://drive.google.com/uc?export=view&id=1DFdu572EVYb1SXhsXQ0XDqvfZ7prhJWg" alt="delete card x">
           </div>
           <article class='idea-title-body'>
@@ -59,13 +60,13 @@ function renderIdeaCards() {
 
 
 function clearInputFields() {
-  userCardTitle.value = "";
-  userCardBody.value = "";
+  cardTitleInput.value = "";
+  cardBodyInput.value = "";
   saveIdeaBtn.disabled = true;
 }
 
 
-function handleIdeaCardClick(event) {
+function targetCardClick(event) {
   var cardEl = event.target.closest('.saved-cards');//get the idea card element (so this will be null if id card is not clicked on)
   var cardId = cardEl && parseInt(cardEl.id);//if element exists, then access the id key, the right side is only executed if left is true
   if (event.target.className === 'delete-card-x') {

@@ -6,7 +6,7 @@ class Idea {
     this.star = false;
   }
   saveToStorage() {
-
+    
   }
   deleteFromStorage() {
 
