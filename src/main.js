@@ -34,7 +34,7 @@ function addCard(card) {
 }
 
 function renderIdeaCards() {
-  savedCardsGrid.innerHTML = '';
+  // savedCardsGrid.innerHTML = '';
   var ideaCardHtml = '';
   for (var i = 0; i < savedIdeaCards.length; i++) {
     ideaCardHtml += `
@@ -66,23 +66,22 @@ function clearInputFields() {
 
 
 function handleIdeaCardClick(event) {
-  var cardId = parseInt(event.target.closest('.saved-cards').id);
+  var cardEl = event.target.closest('.saved-cards');//get the idea card element (so this will be null if id card is not clicked on)
+  var cardId = cardEl && parseInt(cardEl.id);//if element exists, then access the id key, the right side is only executed if left is true
   if (event.target.className === 'delete-card-x') {
-    deleteCard(event)
-    renderIdeaCards();//remove?
+    deleteCard(cardId)
   }
   if (event.target.className === 'favorited-star') {
-    toggleIsFavorite(event);
-    renderIdeaCards();//remove?
+    toggleIsFavorite(cardId);
   }
 }
 
-function deleteCard(cardId) {
+function deleteCard(cardId) {//can for loop be refactored to be DRY?
     for (var i = 0; i < savedIdeaCards.length; i++) {
       if (savedIdeaCards[i].id === cardId) {
         savedIdeaCards.splice(i, 1);
       }
-      // event.target.closest('.saved-cards').remove();
+      event.target.closest('.saved-cards').remove();
     }
   }
 
@@ -93,4 +92,5 @@ function toggleIsFavorite(cardId) {
       savedIdeaCards[i].updateIdea();
     }
   }
-}//put render here?
+  renderIdeaCards();
+}
