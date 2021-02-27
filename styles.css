@@ -79,8 +79,7 @@ label {
 }
 
 
-.title-text,
-.body-text {
+.user-input {
   width: 45%;
   height: 75px;
   border-radius: 5px;
@@ -94,7 +93,7 @@ label {
 
 
 .save-idea-btn {
-  background-color: #5356A4;
+  background-color: #1F1F3D;
   color: #EAEAF4;
   width: 45%;
   height: 75px;
@@ -104,13 +103,13 @@ label {
   font-size: x-large;
   font-family: 'Open Sans';
   margin: 25px;
-  cursor: not-allowed;
+  cursor: pointer;
 }
 
 
-.activate {
-  background-color: #1F1F3D;
-  cursor: pointer;
+#save-button:disabled{
+  background-color: #5356A4;
+  cursor: not-allowed;
 }
 
 
