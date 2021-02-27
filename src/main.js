@@ -6,12 +6,10 @@ var savedCardsGrid = document.querySelector('.saved-cards-grid')
 var userCardTitle = document.getElementById('userCardTitle');
 var userCardBody = document.getElementById('userCardBody');
 var starImageSrc = document.querySelector('.favorited-star');
-// var deleteIdeaCard = document.querySelector('.delete-card-x');
 
 ideaForm.addEventListener('keyup', checkUserInputs);
 saveIdeaBtn.addEventListener('click', createNewIdea);
 savedCardsGrid.addEventListener('click', handleIdeaCardClick); //one function that would figure out what was clicked and then send you on to another fx
-// savedCardsGrid.addEventListener('click', changeStar);
 
 var savedIdeaCards = [];
 var whiteStar = "https://drive.google.com/uc?export=view&id=1TW-aKpR_uBW0Ayp6AtTqVq5cxuX27GiH";
@@ -68,33 +66,31 @@ function clearInputFields() {
 
 
 function handleIdeaCardClick(event) {
+  var cardId = parseInt(event.target.closest('.saved-cards').id);
   if (event.target.className === 'delete-card-x') {
     deleteCard(event)
+    renderIdeaCards();//remove?
   }
   if (event.target.className === 'favorited-star') {
     toggleIsFavorite(event);
+    renderIdeaCards();//remove?
   }
 }
 
-function deleteCard(event) {
-    var cardId = event.target.closest('.saved-cards').id;
+function deleteCard(cardId) {
     for (var i = 0; i < savedIdeaCards.length; i++) {
-      if (savedIdeaCards[i].id === parseInt(cardId)) {
+      if (savedIdeaCards[i].id === cardId) {
         savedIdeaCards.splice(i, 1);
       }
-      event.target.closest('.saved-cards').remove();
+      // event.target.closest('.saved-cards').remove();
     }
   }
 
 
-function toggleIsFavorite(event) {
-  var cardId = event.target.closest('.saved-cards').id;
+function toggleIsFavorite(cardId) {
   for (var i = 0; i < savedIdeaCards.length; i++) {
-    if (savedIdeaCards[i].id === parseInt(cardId)) {
-      // console.log(savedIdeaCards[i].star)
+    if (savedIdeaCards[i].id === cardId) {
       savedIdeaCards[i].updateIdea();
-
     }
-    renderIdeaCards();
   }
-}
+}//put render here?
