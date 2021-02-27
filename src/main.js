@@ -22,11 +22,11 @@ function checkUserInputs() {
   }
 }
 
-
 function createNewIdea() {
   event.preventDefault();
   checkUserInputs();
-  var newIdeaCard = new Idea (userCardTitle.value, userCardBody.value);
+  var newIdeaCard = new Idea(userCardTitle.value, userCardBody.value);
+  savedIdeaCards.push(newIdeaCard); 
   addCard();
   clearInputFields();
 }
