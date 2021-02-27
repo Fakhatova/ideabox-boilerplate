@@ -7,6 +7,7 @@ var cardTitleInput = document.getElementById('userCardTitle');
 var cardBodyInput = document.getElementById('userCardBody');
 
 
+window.addEventListener('load', renderLocalStorageCards)
 ideaForm.addEventListener('keyup', saveBtnStatus);
 saveIdeaBtn.addEventListener('click', createNewIdea);
 savedCardsGrid.addEventListener('click', targetCardClick); //one function that would figure out what was clicked and then send you on to another fx
@@ -20,16 +21,12 @@ function saveBtnStatus() {
   saveIdeaBtn.disabled = (cardBodyInput.value === '' || cardTitleInput.value === '');
 }
 
-function addCard(card) {
-  savedIdeaCards.push(card);
-  renderIdeaCards();
-}
-
 function createNewIdea() {
   event.preventDefault();
   saveBtnStatus();
   var newIdeaCard = new Idea(cardTitleInput.value, cardBodyInput.value);
-  addCard(newIdeaCard);
+  newIdeaCard.saveToStorage(newIdeaCard);
+  renderIdeaCards();
   clearInputFields();
 }
 
@@ -94,4 +91,11 @@ function toggleIsFavorite(cardId) {
     }
   }
   renderIdeaCards();
+}
+
+function renderLocalStorageCards() {
+  for (var i = 0; i < localStorage.length; i++) {
+    var key = localStorage.key(i);
+    console.log(`${key}: ${localStorage.getItem(key)}`);
+  }
 }
