@@ -66,7 +66,6 @@ function clearInputFields() {
 function deleteCard(event) {
   if (event.target.className === 'delete-card-x') {
     var cardId = event.target.closest('.saved-cards').id;
-    console.log(event.target.closest('.saved-cards'));
     for (var i = 0; i < savedIdeaCards.length; i++) {
       if (savedIdeaCards[i].id === parseInt(cardId)) {
         savedIdeaCards.splice(i, 1);
