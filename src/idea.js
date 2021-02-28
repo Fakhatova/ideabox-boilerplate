@@ -19,10 +19,15 @@ class Idea {
         localStorage.removeItem(id)
       }
     }
-
   }
 
-  updateIdea() {
+  updateIdea(instance) {
     this.star = !this.star;
+    for (var i = 0; i < localStorage.length; i++) {
+      var id = localStorage.key(i);
+      var item = JSON.parse(localStorage.getItem(id));
+      item.star = instance.star;
+      localStorage.setItem(id, JSON.stringify(item))
+    }
   }
 }

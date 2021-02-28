@@ -79,11 +79,9 @@ function deleteCard(cardId) { //can for loop be refactored to be DRY?
     if (savedIdeaCards[i].id === cardId) {
       savedIdeaCards[i].deleteFromStorage(cardId);
       savedIdeaCards.splice(i, 1);
-
     }
     event.target.closest('.saved-cards').remove();
   }
-
 }
 
 
@@ -91,7 +89,9 @@ function deleteCard(cardId) { //can for loop be refactored to be DRY?
 function toggleIsFavorite(cardId) {
   for (var i = 0; i < savedIdeaCards.length; i++) {
     if (savedIdeaCards[i].id === cardId) {
-      savedIdeaCards[i].updateIdea();
+      // savedIdeaCards[i].updateIdea();
+      savedIdeaCards[i].updateIdea(savedIdeaCards[i]);
+      //use this ID to find the correct key in local storage, reassign the value with the new info
     }
   }
   renderIdeaCards();
