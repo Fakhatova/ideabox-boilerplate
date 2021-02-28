@@ -1,11 +1,6 @@
 class Idea {
   constructor(id, title, body, star) {
-    if (id === undefined) {
-      this.id = Date.now();
-    } else {
-      this.id = id;
-    }
-    // this.id = id || Date.now();
+    this.id = id ? id : Date.now();
     this.title = title;
     this.body = body;
     this.star = star;
