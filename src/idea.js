@@ -5,8 +5,10 @@ class Idea {
     this.body = body;
     this.star = false;
   }
-  saveToStorage() {
-
+  saveToStorage(card) {
+    savedIdeaCards.push(card);
+    var cardId = card.id;
+    localStorage.setItem(cardId, JSON.stringify(card));
   }
   deleteFromStorage() {
 
