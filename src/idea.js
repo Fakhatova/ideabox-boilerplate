@@ -1,9 +1,9 @@
 class Idea {
-  constructor(title, body) {
+  constructor(title, body, star) {
     this.id = Date.now();
     this.title = title;
     this.body = body;
-    this.star = false;
+    this.star = star;
   }
   saveToStorage(card) {
     savedIdeaCards.push(card);
@@ -13,8 +13,6 @@ class Idea {
   deleteFromStorage(cardId) {
     for (var i = 0; i < localStorage.length; i++) {
       var id = JSON.parse(localStorage.key(i));
-      console.log(id);
-
       if (cardId === id) {
         localStorage.removeItem(id)
       }
@@ -22,12 +20,14 @@ class Idea {
   }
 
   updateIdea(instance) {
-    this.star = !this.star;
+    this.star = !instance.star;
     for (var i = 0; i < localStorage.length; i++) {
       var id = localStorage.key(i);
       var item = JSON.parse(localStorage.getItem(id));
-      item.star = instance.star;
-      localStorage.setItem(id, JSON.stringify(item))
+      if (parseInt(id) === instance.id) {
+        item.star = instance.star;
+        localStorage.setItem(id, JSON.stringify(instance));
+      }
     }
   }
 }
