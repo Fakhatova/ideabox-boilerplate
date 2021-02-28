@@ -11,7 +11,7 @@ window.addEventListener('load', renderLocalStorageCards)
 ideaForm.addEventListener('keyup', saveBtnStatus);
 saveIdeaBtn.addEventListener('click', createNewIdea);
 savedCardsGrid.addEventListener('click', targetCardClick); //one function that would figure out what was clicked and then send you on to another fx
-// showStarredIdeaBtn.addEventListener('click', starrAllFavorite);
+showStarredIdeaBtn.addEventListener('click', showStarredIdeas);
 
 var savedIdeaCards = [];
 var whiteStarSrc = "https://drive.google.com/uc?export=view&id=1TW-aKpR_uBW0Ayp6AtTqVq5cxuX27GiH";
@@ -25,7 +25,7 @@ function saveBtnStatus() {
 function createNewIdea() {
   event.preventDefault();
   saveBtnStatus();
-  var newIdeaCard = new Idea(cardTitleInput.value, cardBodyInput.value, startStar);
+  var newIdeaCard = new Idea(Date.now(), cardTitleInput.value, cardBodyInput.value, startStar);
   newIdeaCard.saveToStorage(newIdeaCard);
   renderIdeaCards();
   clearInputFields();
@@ -103,14 +103,49 @@ function renderLocalStorageCards() {
   for (var i = 0; i < localStorage.length; i++) {
     var id = localStorage.key(i);
     var item = JSON.parse(localStorage.getItem(id));
-    var newIdeaCard = new Idea(item.title, item.body, item.star)
+    var newIdeaCard = new Idea(item.id, item.title, item.body, item.star)
     savedIdeaCards.push(newIdeaCard);
   }
   renderIdeaCards();
 }
 
 
+function showStarredIdeas() {
+  if (showStarredIdeaBtn.innerText === "Show Starred Ideas") {
+    var ideaCardHtml = '';
+    for (var i = 0; i < savedIdeaCards.length; i++)  {
+      if (savedIdeaCards[i].star) {
+        ideaCardHtml += `
+          <section class="saved-cards" id="${savedIdeaCards[i].id}">
+            <div class='favorite-delete'>
+              <img class='favorited-star' src="${savedIdeaCards[i].star ? redStarSrc: whiteStarSrc}" alt="favorite star">
+              <img class='delete-card-x' src="https://drive.google.com/uc?export=view&id=1DFdu572EVYb1SXhsXQ0XDqvfZ7prhJWg" alt="delete card x">
+              </div>
+              <article class='idea-title-body'>
+                <p class='idea-card-title'>${savedIdeaCards[i].title}</p>
+                <p class='idea-card-body'>${savedIdeaCards[i].body}</p>
+              </article>
+            <div class='comment-bar'>
+              <img class='add-comment' src="https://drive.google.com/uc?export=view&id=1xk4FryiJY3UgKdzYQhKdKPBe75ubWaYt" alt="add comment">
+              <span>Comment</span>
+            </div>
+          </section>
+        `
+        savedCardsGrid.innerHTML = ideaCardHtml;
+      }
+    }
+  } else {
+    renderIdeaCards()
+  }
+  toggleStarredIdeasBtn();
+}
 
 
-// Issue on star button is a that function updateIdea function is
-// updating all stars but not single star.
+function toggleStarredIdeasBtn() {
+  // showStarredIdeaBtn.innerText = "Show Starred Ideas" ? "Show All Ideas" : "Show Starred Ideas";
+  if (showStarredIdeaBtn.innerText === "Show Starred Ideas") {
+    showStarredIdeaBtn.innerText = "Show All Ideas";
+  } else {
+    showStarredIdeaBtn.innerText = "Show Starred Ideas"
+  }
+}
