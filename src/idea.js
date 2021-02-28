@@ -1,15 +1,23 @@
 class Idea {
-  constructor(title, body, star) {
-    this.id = Date.now();
+  constructor(id, title, body, star) {
+    if (id === undefined) {
+      this.id = Date.now();
+    } else {
+      this.id = id;
+    }
+    // this.id = id || Date.now();
     this.title = title;
     this.body = body;
     this.star = star;
+
   }
+
   saveToStorage(card) {
     savedIdeaCards.push(card);
     var cardId = card.id;
     localStorage.setItem(cardId, JSON.stringify(card));
   }
+
   deleteFromStorage(cardId) {
     for (var i = 0; i < localStorage.length; i++) {
       var id = JSON.parse(localStorage.key(i));

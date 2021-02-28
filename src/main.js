@@ -25,7 +25,7 @@ function saveBtnStatus() {
 function createNewIdea() {
   event.preventDefault();
   saveBtnStatus();
-  var newIdeaCard = new Idea(cardTitleInput.value, cardBodyInput.value, startStar);
+  var newIdeaCard = new Idea(Date.now(), cardTitleInput.value, cardBodyInput.value, startStar);
   newIdeaCard.saveToStorage(newIdeaCard);
   renderIdeaCards();
   clearInputFields();
@@ -103,7 +103,7 @@ function renderLocalStorageCards() {
   for (var i = 0; i < localStorage.length; i++) {
     var id = localStorage.key(i);
     var item = JSON.parse(localStorage.getItem(id));
-    var newIdeaCard = new Idea(item.title, item.body, item.star)
+    var newIdeaCard = new Idea(item.id, item.title, item.body, item.star)
     savedIdeaCards.push(newIdeaCard);
   }
   renderIdeaCards();
