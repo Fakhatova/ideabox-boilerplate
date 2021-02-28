@@ -11,7 +11,7 @@ window.addEventListener('load', renderLocalStorageCards)
 ideaForm.addEventListener('keyup', saveBtnStatus);
 saveIdeaBtn.addEventListener('click', createNewIdea);
 savedCardsGrid.addEventListener('click', targetCardClick); //one function that would figure out what was clicked and then send you on to another fx
-showStarredIdeaBtn.addEventListener('click', starrAllFavorite);
+// showStarredIdeaBtn.addEventListener('click', starrAllFavorite);
 
 var savedIdeaCards = [];
 var whiteStarSrc = "https://drive.google.com/uc?export=view&id=1TW-aKpR_uBW0Ayp6AtTqVq5cxuX27GiH";
@@ -122,3 +122,9 @@ function renderLocalStorageCards() {
   }
   savedCardsGrid.innerHTML = ideaCardHtml;
 }
+
+
+
+
+// Issue on star button is a that function updateIdea function is
+// updating all stars but not single star. 
