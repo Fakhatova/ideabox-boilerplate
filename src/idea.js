@@ -1,9 +1,9 @@
 class Idea {
-  constructor(title, body) {
+  constructor(title, body, star) {
     this.id = Date.now();
     this.title = title;
     this.body = body;
-    this.star = false;
+    this.star = star;
   }
   saveToStorage(card) {
     savedIdeaCards.push(card);
@@ -20,14 +20,12 @@ class Idea {
   }
 
   updateIdea(instance) {
-    this.star = !this.star;
+    this.star = !instance.star;
     for (var i = 0; i < localStorage.length; i++) {
       var id = localStorage.key(i);
       var item = JSON.parse(localStorage.getItem(id));
       if (parseInt(id) === instance.id) {
-        console.log(item);
-        console.log(instance);
-        item.star = this.star
+        item.star = instance.star;
         localStorage.setItem(id, JSON.stringify(instance));
       }
     }

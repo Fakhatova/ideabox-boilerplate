@@ -5,7 +5,7 @@ var ideaForm = document.querySelector('.user-idea-form')
 var savedCardsGrid = document.querySelector('.saved-cards-grid')
 var cardTitleInput = document.getElementById('userCardTitle');
 var cardBodyInput = document.getElementById('userCardBody');
-
+var startStar = false;
 
 window.addEventListener('load', renderLocalStorageCards)
 ideaForm.addEventListener('keyup', saveBtnStatus);
@@ -25,7 +25,7 @@ function saveBtnStatus() {
 function createNewIdea() {
   event.preventDefault();
   saveBtnStatus();
-  var newIdeaCard = new Idea(cardTitleInput.value, cardBodyInput.value);
+  var newIdeaCard = new Idea(cardTitleInput.value, cardBodyInput.value, startStar);
   newIdeaCard.saveToStorage(newIdeaCard);
   renderIdeaCards();
   clearInputFields();
@@ -55,7 +55,7 @@ function renderIdeaCards() {
     savedCardsGrid.innerHTML = ideaCardHtml;
   } //went from updating the Dom card# times to once
 }
-
+//
 
 function clearInputFields() {
   cardTitleInput.value = "";
@@ -103,28 +103,14 @@ function renderLocalStorageCards() {
   for (var i = 0; i < localStorage.length; i++) {
     var id = localStorage.key(i);
     var item = JSON.parse(localStorage.getItem(id));
-    ideaCardHtml += `
-      <section class="saved-cards" id="${item.id}">
-        <div class='favorite-delete'>
-          <img class='favorited-star' src="${item.star ? redStarSrc: whiteStarSrc}" alt="favorite star">
-          <img class='delete-card-x' src="https://drive.google.com/uc?export=view&id=1DFdu572EVYb1SXhsXQ0XDqvfZ7prhJWg" alt="delete card x">
-          </div>
-          <article class='idea-title-body'>
-            <p class='idea-card-title'>${item.title}</p>
-            <p class='idea-card-body'>${item.body}</p>
-          </article>
-        <div class='comment-bar'>
-          <img class='add-comment' src="https://drive.google.com/uc?export=view&id=1xk4FryiJY3UgKdzYQhKdKPBe75ubWaYt" alt="add comment">
-          <span>Comment</span>
-        </div>
-      </section>
-    `
+    var newIdeaCard = new Idea(item.title, item.body, item.star)
+    savedIdeaCards.push(newIdeaCard);
   }
-  savedCardsGrid.innerHTML = ideaCardHtml;
+  renderIdeaCards();
 }
 
 
 
 
 // Issue on star button is a that function updateIdea function is
-// updating all stars but not single star. 
+// updating all stars but not single star.
