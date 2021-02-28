@@ -64,8 +64,8 @@ function clearInputFields() {
 
 
 function targetCardClick(event) {
-  var cardEl = event.target.closest('.saved-cards');//get the idea card element (so this will be null if id card is not clicked on)
-  var cardId = cardEl && parseInt(cardEl.id);//if element exists, then access the id key, the right side is only executed if left is true
+  var cardEl = event.target.closest('.saved-cards'); //get the idea card element (so this will be null if id card is not clicked on)
+  var cardId = cardEl && parseInt(cardEl.id); //if element exists, then access the id key, the right side is only executed if left is true
   if (event.target.className === 'delete-card-x') {
     deleteCard(cardId)
   }
@@ -74,14 +74,18 @@ function targetCardClick(event) {
   }
 }
 
-function deleteCard(cardId) {//can for loop be refactored to be DRY?
-    for (var i = 0; i < savedIdeaCards.length; i++) {
-      if (savedIdeaCards[i].id === cardId) {
-        savedIdeaCards.splice(i, 1);
-      }
-      event.target.closest('.saved-cards').remove();
+function deleteCard(cardId) { //can for loop be refactored to be DRY?
+  for (var i = 0; i < savedIdeaCards.length; i++) {
+    if (savedIdeaCards[i].id === cardId) {
+      savedIdeaCards[i].deleteFromStorage(cardId);
+      savedIdeaCards.splice(i, 1);
+
     }
+    event.target.closest('.saved-cards').remove();
   }
+
+}
+
 
 
 function toggleIsFavorite(cardId) {

@@ -10,9 +10,18 @@ class Idea {
     var cardId = card.id;
     localStorage.setItem(cardId, JSON.stringify(card));
   }
-  deleteFromStorage() {
+  deleteFromStorage(cardId) {
+    for (var i = 0; i < localStorage.length; i++) {
+      var id = JSON.parse(localStorage.key(i));
+      console.log(id);
+
+      if (cardId === id) {
+        localStorage.removeItem(id)
+      }
+    }
 
   }
+
   updateIdea() {
     this.star = !this.star;
   }
