@@ -1,11 +1,12 @@
 var cardBodyInput = document.getElementById('userCardBody');
 var cardTitleInput = document.getElementById('userCardTitle');
+var commentForm = document.querySelector('.user-comment-form');
 var ideaForm = document.querySelector('.user-idea-form')
 var savedCardsGrid = document.querySelector('.saved-cards-grid')
+var saveCommentBtn = document.querySelector('add-comment-btn');
 var saveIdeaBtn = document.getElementById('saveButton');
 var searchBarInput = document.getElementById('searchBar');
 var showStarredIdeaBtn = document.getElementById('starredIdeas');
-var commentForm = document.querySelector('.user-comment-form');
 
 window.addEventListener('load', renderLocalStorageCards)
 ideaForm.addEventListener('keyup', saveBtnStatus);
@@ -68,6 +69,7 @@ function clearInputFields() {
   cardTitleInput.value = "";
   cardBodyInput.value = "";
   saveIdeaBtn.disabled = true;
+  saveCommentBtn.disabled = true;
 }
 
 
@@ -105,6 +107,7 @@ function toggleIsFavorite(cardId) {
   }
   renderIdeaCards(savedIdeaCards);
 }
+
 
 function addComment(cardId) {
   ideaForm.classList.add('hidden');
