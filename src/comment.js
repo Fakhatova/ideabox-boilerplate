@@ -1,6 +1,6 @@
 class Comment {
-  constructor() {
-
+  constructor(text) {
+    this.text = text;
   }
   saveToStorage() {
 

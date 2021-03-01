@@ -1,19 +1,22 @@
 var cardBodyInput = document.getElementById('userCardBody');
 var cardTitleInput = document.getElementById('userCardTitle');
 var commentForm = document.querySelector('.user-comment-form');
+var commentInputBox = document.querySelector('.user-comment-box');
 var ideaForm = document.querySelector('.user-idea-form')
 var savedCardsGrid = document.querySelector('.saved-cards-grid')
-var saveCommentBtn = document.querySelector('add-comment-btn');
+var saveCommentBtn = document.querySelector('.add-comment-btn');
 var saveIdeaBtn = document.getElementById('saveButton');
 var searchBarInput = document.getElementById('searchBar');
 var showStarredIdeaBtn = document.getElementById('starredIdeas');
 
 window.addEventListener('load', renderLocalStorageCards)
 ideaForm.addEventListener('keyup', saveBtnStatus);
+saveCommentBtn.addEventListener('click', createNewComment);
 saveIdeaBtn.addEventListener('click', createNewIdea);
 savedCardsGrid.addEventListener('click', targetCardClick);
 showStarredIdeaBtn.addEventListener('click', showStarredIdeas);
 searchBarInput.addEventListener('keyup', searchIdeas);
+
 
 var savedIdeaCards = [];
 var filteredIdeaCards = [];
@@ -21,7 +24,7 @@ var whiteStarSrc = "https://drive.google.com/uc?export=view&id=1TW-aKpR_uBW0Ayp6
 var redStarSrc = "https://drive.google.com/uc?export=view&id=13_jn9vQvAdNzdcbdRmYoR6mBOZHoeqzU";
 var startStar = false;
 saveIdeaBtn.disabled = true;
-
+var commentCardId;
 
 function saveBtnStatus() {
   saveIdeaBtn.disabled = (cardBodyInput.value === '' || cardTitleInput.value === '');
@@ -108,12 +111,22 @@ function toggleIsFavorite(cardId) {
   renderIdeaCards(savedIdeaCards);
 }
 
-
-function addComment(cardId) {
+function addComment(cardId) {   //plus sign
   ideaForm.classList.add('hidden');
   commentForm.classList.remove('hidden');
+  commentCardId = cardId;
 }
 
+
+function createNewComment() {
+  event.preventDefault();
+  var newComment = new Comment(commentInputBox.value);
+  for (var i = 0; i < savedIdeaCards.length; i++) {
+    if (commentCardId === savedIdeaCards[i].id) {
+      savedIdeaCards[i].comments.push(newComment.data);
+    }
+  }
+}
 
 function renderLocalStorageCards() {
   var ideaCardHtml = '';
