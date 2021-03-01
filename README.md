@@ -39,17 +39,15 @@ Throughout the project, one of our focuses will be on providing a fluid and resp
 
 #### Starring Idea cards
 
-* When `Show Starred Ideas` button is clicked, only idea cards which been favourited will display on a screen. Then button toggles to `Show All Ideas` button
+* When `Show Starred Ideas` button is clicked, only idea cards which been favourited will display on a screen. Then button toggles to `Show All Ideas` button.
 
-* When `Show All ideas` button is clicked  all ideas will display on a screen. 
+* When `Show All ideas` button is clicked  all ideas will display on a screen.
 
+#### Searching an Idea Card
 
+* To search through the ideas made for a specific word or phrase, use the `Search Bar`. When typing the phrase, the idea cards will be filtered accordingly.
 
-
-
-
-
-
+-------------------------------------------------------------------------------
 ### Contributors
 
 * Sarah Lane https://github.com/sarahlane8
@@ -58,7 +56,7 @@ Throughout the project, one of our focuses will be on providing a fluid and resp
 
 * Fara Akhatova https://github.com/Fakhatova
 
-### Languages
+#### Languages
 
 * HTML
 
@@ -66,7 +64,7 @@ Throughout the project, one of our focuses will be on providing a fluid and resp
 
 * JavaScript
 
-### Reasources
+#### Reasources
 
 * GitHub
 
@@ -76,36 +74,19 @@ Throughout the project, one of our focuses will be on providing a fluid and resp
 
 * Research sources:MDN, StackOverflow,
 
+
+#### GitHub Workflow
+
+* Atomic commits.
+
+* Every PR request followed with a template.
+
+* PR reviewed and added comments on it.
+
+* Branches created for each iteration and feature.
+
+
 -----------------------------------------------------------------------------
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-The project spec & rubric can be found [here](https://frontend.turing.io/projects/module-1/ideabox-group.html)
+Project Repository and Deployed page: https://github.com/sarahlane8/ideabox-boilerplate
