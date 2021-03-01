@@ -1,11 +1,11 @@
 // var userInputs = document.querySelectorAll('.user-input');
-var showStarredIdeaBtn = document.querySelector('.starred-ideas-btn');
-var saveIdeaBtn = document.querySelector('.save-idea-btn');
+var showStarredIdeaBtn = document.getElementById('starredIdeas');
+var saveIdeaBtn = document.getElementById('saveButton');
 var ideaForm = document.querySelector('.user-idea-form')
 var savedCardsGrid = document.querySelector('.saved-cards-grid')
 var cardTitleInput = document.getElementById('userCardTitle');
 var cardBodyInput = document.getElementById('userCardBody');
-var searchBarInput = document.querySelector('.search-cards');
+var searchBarInput = document.getElementById('searchBar');
 
 window.addEventListener('load', renderLocalStorageCards)
 ideaForm.addEventListener('keyup', saveBtnStatus);
@@ -146,7 +146,7 @@ function showStarredIdeas() {
 
 
 function toggleStarredIdeasBtn() {
-  // showStarredIdeaBtn.innerText = "Show Starred Ideas" ? "Show All Ideas" : "Show Starred Ideas";
+  // (showStarredIdeaBtn.innerText === "Show Starred Ideas") ? "Show All Ideas" : "Show Starred Ideas";
   if (showStarredIdeaBtn.innerText === "Show Starred Ideas") {
     showStarredIdeaBtn.innerText = "Show All Ideas";
   } else {
@@ -157,8 +157,7 @@ function toggleStarredIdeasBtn() {
 function searchIdeas(e) {
   var searchString = e.target.value.toLowerCase();
   var filteredIdeas = savedIdeaCards.filter(idea =>
-    idea.title.toLowerCase().includes(searchString) || idea.body.toLowerCase().includes(searchString)
-  );
+    idea.title.toLowerCase().includes(searchString) || idea.body.toLowerCase().includes(searchString));
   var ideaCardHtml = '';
   for (var i = 0; i < filteredIdeas.length; i++)  {
     ideaCardHtml += `
