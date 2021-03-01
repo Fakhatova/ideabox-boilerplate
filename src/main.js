@@ -33,6 +33,9 @@ function createNewIdea() {
   newIdeaCard.saveToStorage(newIdeaCard);
   renderIdeaCards(savedIdeaCards);
   clearInputFields();
+  if (showStarredIdeaBtn.innerText = "Show All Ideas") {
+    toggleStarredIdeasBtn()
+  }
 }
 
 
