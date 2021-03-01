@@ -16,48 +16,32 @@ Throughout the project, one of our focuses will be on providing a fluid and resp
 
 * Craft code with clean style, using small functions that show trends toward DRYness and SRP
 
-==========================================================================================================================
+-------------------------------------------------------------------------------
 
 ## Overview
 
 ![make own idea cards](https://frontend.turing.io/projects/module-1/assets/ideabox-group/desktop.jpg)
 
-======================================================================================================
+-------------------------------------------------------------------------------
 
 ### How? Main Paige Functionality
 
 
 #### Creating  and Deleting Idea Cards
 
-* When both _Title and _Body input fields are filled with text _Saved button is activated.
+* When both `Title` and `Body` input fields are filled with text `Saved button` is activated.
 
-* Save and Create Idea Card by clicking a _Save button. Idea Card displayed on a main page and input fields are cleared.
+* Save and Create Idea Card by clicking a `Save` button, idea card displayed on a main page and input fields are cleared.
 
-* When _star clicked on idea card, card is favourited. 
+* When `star` clicked on idea card, card is favourited.
 
-* When _x clicked idea card is deleted.
-
-
+* When `X` clicked idea card, card is deleted.
 
 #### Starring Idea cards
 
+* When `Show Starred Ideas` button is clicked, only idea cards which been favourited will display on a screen. Then button toggles to `Show All Ideas` button
 
-
-
-## Instructions
-
-* Create your own idea card
-
-* Favorite your idea card
-
-* Delete your idea card
-
-* Starr your idea card
-
-* Filter your idea card
-
-
-
+* When `Show All ideas`
 
 
 
@@ -92,7 +76,7 @@ Throughout the project, one of our focuses will be on providing a fluid and resp
 
 * Research sources:MDN, StackOverflow,
 
-=================================================
+-----------------------------------------------------------------------------
 
 
 
