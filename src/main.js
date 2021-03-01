@@ -60,7 +60,7 @@ function renderIdeaCards(array) {
         </article>
         <div class='comment-bar'>
           <img class='add-comment' src="https://drive.google.com/uc?export=view&id=1xk4FryiJY3UgKdzYQhKdKPBe75ubWaYt" alt="add comment">
-          <span>Comment</span>
+          <span>${array[i].comments[0] ? array[i].comments[0]: 'Comment'}</span>
         </div>
       </section>
     `
@@ -128,6 +128,8 @@ function createNewComment() {
       savedIdeaCards[i].comments.push(newComment.data);
     }
   }
+  renderIdeaCards(savedIdeaCards);
+  //replace span with += commentInputBox.value
   clearInputFields();
 }
 function displayIdeaForm() {
