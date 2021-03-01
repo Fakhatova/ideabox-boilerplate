@@ -41,7 +41,7 @@ Throughout the project, one of our focuses will be on providing a fluid and resp
 
 * When `Show Starred Ideas` button is clicked, only idea cards which been favourited will display on a screen. Then button toggles to `Show All Ideas` button
 
-* When `Show All ideas`
+* When `Show All ideas` button is clicked  all ideas will display on a screen. 
 
 
 
