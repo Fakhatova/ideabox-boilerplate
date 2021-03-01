@@ -5,7 +5,7 @@ var ideaForm = document.querySelector('.user-idea-form')
 var savedCardsGrid = document.querySelector('.saved-cards-grid')
 var cardTitleInput = document.getElementById('userCardTitle');
 var cardBodyInput = document.getElementById('userCardBody');
-var startStar = false;
+var searchBarInput = document.querySelector('.search-cards');
 
 window.addEventListener('load', renderLocalStorageCards)
 ideaForm.addEventListener('keyup', saveBtnStatus);
@@ -13,10 +13,14 @@ saveIdeaBtn.addEventListener('click', createNewIdea);
 savedCardsGrid.addEventListener('click', targetCardClick); //one function that would figure out what was clicked and then send you on to another fx
 showStarredIdeaBtn.addEventListener('click', showStarredIdeas);
 
+searchBarInput.addEventListener('keyup', searchIdeas);
+
 var savedIdeaCards = [];
+var filteredIdeaCards = [];
 var whiteStarSrc = "https://drive.google.com/uc?export=view&id=1TW-aKpR_uBW0Ayp6AtTqVq5cxuX27GiH";
 var redStarSrc = "https://drive.google.com/uc?export=view&id=13_jn9vQvAdNzdcbdRmYoR6mBOZHoeqzU";
 saveIdeaBtn.disabled = true;
+var startStar = false;
 
 function saveBtnStatus() {
   saveIdeaBtn.disabled = (cardBodyInput.value === '' || cardTitleInput.value === '');
@@ -147,5 +151,32 @@ function toggleStarredIdeasBtn() {
     showStarredIdeaBtn.innerText = "Show All Ideas";
   } else {
     showStarredIdeaBtn.innerText = "Show Starred Ideas"
+  }
+}
+
+function searchIdeas(e) {
+  var searchString = e.target.value.toLowerCase();
+  var filteredIdeas = savedIdeaCards.filter(idea =>
+    idea.title.toLowerCase().includes(searchString) || idea.body.toLowerCase().includes(searchString)
+  );
+  var ideaCardHtml = '';
+  for (var i = 0; i < filteredIdeas.length; i++)  {
+    ideaCardHtml += `
+      <section class="saved-cards" id="${filteredIdeas[i].id}">
+        <div class='favorite-delete'>
+          <img class='favorited-star' src="${filteredIdeas[i].star ? redStarSrc: whiteStarSrc}" alt="favorite star">
+          <img class='delete-card-x' src="https://drive.google.com/uc?export=view&id=1DFdu572EVYb1SXhsXQ0XDqvfZ7prhJWg" alt="delete card x">
+          </div>
+          <article class='idea-title-body'>
+            <p class='idea-card-title'>${filteredIdeas[i].title}</p>
+            <p class='idea-card-body'>${filteredIdeas[i].body}</p>
+          </article>
+        <div class='comment-bar'>
+          <img class='add-comment' src="https://drive.google.com/uc?export=view&id=1xk4FryiJY3UgKdzYQhKdKPBe75ubWaYt" alt="add comment">
+          <span>Comment</span>
+        </div>
+      </section>
+    `
+    savedCardsGrid.innerHTML = ideaCardHtml;
   }
 }
