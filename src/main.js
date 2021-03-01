@@ -1,30 +1,30 @@
-// var userInputs = document.querySelectorAll('.user-input');
-var showStarredIdeaBtn = document.getElementById('starredIdeas');
-var saveIdeaBtn = document.getElementById('saveButton');
+var cardBodyInput = document.getElementById('userCardBody');
+var cardTitleInput = document.getElementById('userCardTitle');
 var ideaForm = document.querySelector('.user-idea-form')
 var savedCardsGrid = document.querySelector('.saved-cards-grid')
-var cardTitleInput = document.getElementById('userCardTitle');
-var cardBodyInput = document.getElementById('userCardBody');
+var saveIdeaBtn = document.getElementById('saveButton');
 var searchBarInput = document.getElementById('searchBar');
+var showStarredIdeaBtn = document.getElementById('starredIdeas');
 
 window.addEventListener('load', renderLocalStorageCards)
 ideaForm.addEventListener('keyup', saveBtnStatus);
 saveIdeaBtn.addEventListener('click', createNewIdea);
-savedCardsGrid.addEventListener('click', targetCardClick); //one function that would figure out what was clicked and then send you on to another fx
+savedCardsGrid.addEventListener('click', targetCardClick);
 showStarredIdeaBtn.addEventListener('click', showStarredIdeas);
-
 searchBarInput.addEventListener('keyup', searchIdeas);
 
 var savedIdeaCards = [];
 var filteredIdeaCards = [];
 var whiteStarSrc = "https://drive.google.com/uc?export=view&id=1TW-aKpR_uBW0Ayp6AtTqVq5cxuX27GiH";
 var redStarSrc = "https://drive.google.com/uc?export=view&id=13_jn9vQvAdNzdcbdRmYoR6mBOZHoeqzU";
-saveIdeaBtn.disabled = true;
 var startStar = false;
+saveIdeaBtn.disabled = true;
+
 
 function saveBtnStatus() {
   saveIdeaBtn.disabled = (cardBodyInput.value === '' || cardTitleInput.value === '');
 }
+
 
 function createNewIdea() {
   event.preventDefault();
@@ -59,6 +59,7 @@ function renderIdeaCards(array) {
   }
 }
 
+
 function clearInputFields() {
   cardTitleInput.value = "";
   cardBodyInput.value = "";
@@ -67,8 +68,8 @@ function clearInputFields() {
 
 
 function targetCardClick(event) {
-  var cardEl = event.target.closest('.saved-cards'); //get the idea card element (so this will be null if id card is not clicked on)
-  var cardId = cardEl && parseInt(cardEl.id); //if element exists, then access the id key, the right side is only executed if left is true
+  var cardEl = event.target.closest('.saved-cards');
+  var cardId = cardEl && parseInt(cardEl.id);
   if (event.target.className === 'delete-card-x') {
     deleteCard(cardId)
   }
@@ -77,7 +78,8 @@ function targetCardClick(event) {
   }
 }
 
-function deleteCard(cardId) { //can for loop be refactored to be DRY?
+
+function deleteCard(cardId) {
   for (var i = 0; i < savedIdeaCards.length; i++) {
     if (savedIdeaCards[i].id === cardId) {
       savedIdeaCards[i].deleteFromStorage(cardId);
@@ -88,17 +90,15 @@ function deleteCard(cardId) { //can for loop be refactored to be DRY?
 }
 
 
-
 function toggleIsFavorite(cardId) {
   for (var i = 0; i < savedIdeaCards.length; i++) {
     if (savedIdeaCards[i].id === cardId) {
-      // savedIdeaCards[i].updateIdea();
       savedIdeaCards[i].updateIdea(savedIdeaCards[i]);
-      //use this ID to find the correct key in local storage, reassign the value with the new info
     }
   }
   renderIdeaCards(savedIdeaCards);
 }
+
 
 function renderLocalStorageCards() {
   var ideaCardHtml = '';
@@ -148,9 +148,10 @@ function toggleStarredIdeasBtn() {
   ? showStarredIdeaBtn.innerText = "Show All Ideas" : showStarredIdeaBtn.innerText = "Show Starred Ideas";
 }
 
+
 function searchIdeas(e) {
   var searchString = e.target.value.toLowerCase();
   var filteredIdeas = savedIdeaCards.filter(idea =>
     idea.title.toLowerCase().includes(searchString) || idea.body.toLowerCase().includes(searchString));
-  renderIdeaCards(filteredIdeas); 
-}
+  renderIdeaCards(filteredIdeas);
+}//add else statement to render empty grid?
