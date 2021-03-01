@@ -101,7 +101,8 @@ label {
 
 
 .save-idea-btn,
-.add-comment-btn {
+.add-comment-btn,
+.take-back-to-main {
   background-color: #1F1F3D;
   color: #EAEAF4;
   width: 45%;
