@@ -86,6 +86,9 @@ label {
   border: 2px solid #5356A4;
 }
 
+.body-input {
+  height: 150px;
+}
 
 .body-text {
   height: 150px;
@@ -124,17 +127,18 @@ label {
 
 .search-cards {
   width: -webkit-fill-available;
-  height: 75px;
+  height: 77px;
   font-size: x-large;
   font-family: 'Open Sans';
+  padding: 0;
 }
 
 
 .magnifying-img {
-  width: 50px;
-  height: 31px;
-  background: #1F1F3D;
-  padding: 22px;
+  width: 41px;
+  /* height: 31px; */
+  background: #353566;
+  padding: 20px;
 }
 
 /* **************SAVED-CARDS-SECTION************** */
@@ -162,7 +166,7 @@ label {
 .idea-title-body {
   background-color: #FFFFFF;
   color: #1F1F3D;
-  height: 33%;
+  height: 25%;
   font-size: xx-large;
 }
 
@@ -186,7 +190,7 @@ label {
 .favorite-delete {
   background-color: #1F1F3D;
   color: #ffffff;
-  height: 6%;
+  height: 4%;
   display: flex;
   justify-content: space-between;
 }
@@ -194,7 +198,7 @@ label {
 
 .comment-bar {
   background-color: #5356A4;
-  height: 6%;
+  height: 4%;
   display: flex;
   align-items: center;
 }
