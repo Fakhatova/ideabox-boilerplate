@@ -86,11 +86,8 @@ label {
   border: 2px solid #5356A4;
 }
 
-.body-input {
-  height: 150px;
-}
 
-.body-text {
+.body-input {
   height: 150px;
 }
 
@@ -213,9 +210,4 @@ span {
   color: #E9E9F3;
   font-weight: bold;
   font-size: x-large;
-}
-
-
-.hidden {
-  display: none!important;
 }
