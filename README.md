@@ -24,7 +24,7 @@ Throughout the project, one of our focuses will be on providing a fluid and resp
 
 -------------------------------------------------------------------------------
 
-### How? Main Paige Functionality
+### How?  Main Paige Functionality
 
 
 #### Creating  and Deleting Idea Cards
@@ -72,7 +72,7 @@ Throughout the project, one of our focuses will be on providing a fluid and resp
 
 * Zoom Remote Collaboration
 
-* Research sources:MDN, StackOverflow,
+* Research sources: MDN, StackOverflow,
 
 
 #### GitHub Workflow
