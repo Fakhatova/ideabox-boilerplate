@@ -149,6 +149,10 @@ label {
 }
 
 
+.saved-cards {
+  height: auto;
+}
+
 .favorited-star {
   height: 95%;
 }
@@ -210,4 +214,7 @@ span {
   color: #E9E9F3;
   font-weight: bold;
   font-size: x-large;
+}
+.hidden {
+  display: none;
 }

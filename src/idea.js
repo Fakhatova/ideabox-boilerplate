@@ -4,7 +4,7 @@ class Idea {
     this.title = title;
     this.body = body;
     this.star = star;
-
+    this.comments = [];
   }
 
   saveToStorage(card) {

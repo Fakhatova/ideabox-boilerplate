@@ -5,6 +5,7 @@ var savedCardsGrid = document.querySelector('.saved-cards-grid')
 var saveIdeaBtn = document.getElementById('saveButton');
 var searchBarInput = document.getElementById('searchBar');
 var showStarredIdeaBtn = document.getElementById('starredIdeas');
+var commentForm = document.querySelector('.user-comment-form');
 
 window.addEventListener('load', renderLocalStorageCards)
 ideaForm.addEventListener('keyup', saveBtnStatus);
@@ -47,11 +48,11 @@ function renderIdeaCards(array) {
         <div class='favorite-delete'>
           <img class='favorited-star' src="${array[i].star ? redStarSrc: whiteStarSrc}" alt="favorite star">
           <img class='delete-card-x' src="https://drive.google.com/uc?export=view&id=1DFdu572EVYb1SXhsXQ0XDqvfZ7prhJWg" alt="delete card x">
-          </div>
-          <article class='idea-title-body'>
-            <p class='idea-card-title'>${array[i].title}</p>
-            <p class='idea-card-body'>${array[i].body}</p>
-          </article>
+        </div>
+        <article class='idea-title-body'>
+          <p class='idea-card-title'>${array[i].title}</p>
+          <p class='idea-card-body'>${array[i].body}</p>
+        </article>
         <div class='comment-bar'>
           <img class='add-comment' src="https://drive.google.com/uc?export=view&id=1xk4FryiJY3UgKdzYQhKdKPBe75ubWaYt" alt="add comment">
           <span>Comment</span>
@@ -79,6 +80,9 @@ function targetCardClick(event) {
   if (event.target.className === 'favorited-star') {
     toggleIsFavorite(cardId);
   }
+  if (event.target.className === 'add-comment') {
+    addComment(cardId);
+  }
 }
 
 
@@ -100,6 +104,11 @@ function toggleIsFavorite(cardId) {
     }
   }
   renderIdeaCards(savedIdeaCards);
+}
+
+function addComment(cardId) {
+  ideaForm.classList.add('hidden');
+  commentForm.classList.remove('hidden');
 }
 
 
@@ -125,11 +134,11 @@ function showStarredIdeas() {
             <div class='favorite-delete'>
               <img class='favorited-star' src="${savedIdeaCards[i].star ? redStarSrc: whiteStarSrc}" alt="favorite star">
               <img class='delete-card-x' src="https://drive.google.com/uc?export=view&id=1DFdu572EVYb1SXhsXQ0XDqvfZ7prhJWg" alt="delete card x">
-              </div>
-              <article class='idea-title-body'>
-                <p class='idea-card-title'>${savedIdeaCards[i].title}</p>
-                <p class='idea-card-body'>${savedIdeaCards[i].body}</p>
-              </article>
+            </div>
+            <article class='idea-title-body'>
+              <p class='idea-card-title'>${savedIdeaCards[i].title}</p>
+              <p class='idea-card-body'>${savedIdeaCards[i].body}</p>
+            </article>
             <div class='comment-bar'>
               <img class='add-comment' src="https://drive.google.com/uc?export=view&id=1xk4FryiJY3UgKdzYQhKdKPBe75ubWaYt" alt="add comment">
               <span>Comment</span>
