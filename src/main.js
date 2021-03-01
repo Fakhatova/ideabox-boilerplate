@@ -31,24 +31,23 @@ function createNewIdea() {
   saveBtnStatus();
   var newIdeaCard = new Idea(Date.now(), cardTitleInput.value, cardBodyInput.value, startStar);
   newIdeaCard.saveToStorage(newIdeaCard);
-  renderIdeaCards();
+  renderIdeaCards(savedIdeaCards);
   clearInputFields();
 }
 
 
-function renderIdeaCards() {
-  // savedCardsGrid.innerHTML = '';
+function renderIdeaCards(array) {
   var ideaCardHtml = '';
-  for (var i = 0; i < savedIdeaCards.length; i++) {
+  for (var i = 0; i < array.length; i++) {
     ideaCardHtml += `
-      <section class="saved-cards" id="${savedIdeaCards[i].id}">
+      <section class="saved-cards" id="${array[i].id}">
         <div class='favorite-delete'>
-          <img class='favorited-star' src="${savedIdeaCards[i].star ? redStarSrc: whiteStarSrc}" alt="favorite star">
+          <img class='favorited-star' src="${array[i].star ? redStarSrc: whiteStarSrc}" alt="favorite star">
           <img class='delete-card-x' src="https://drive.google.com/uc?export=view&id=1DFdu572EVYb1SXhsXQ0XDqvfZ7prhJWg" alt="delete card x">
           </div>
           <article class='idea-title-body'>
-            <p class='idea-card-title'>${savedIdeaCards[i].title}</p>
-            <p class='idea-card-body'>${savedIdeaCards[i].body}</p>
+            <p class='idea-card-title'>${array[i].title}</p>
+            <p class='idea-card-body'>${array[i].body}</p>
           </article>
         <div class='comment-bar'>
           <img class='add-comment' src="https://drive.google.com/uc?export=view&id=1xk4FryiJY3UgKdzYQhKdKPBe75ubWaYt" alt="add comment">
@@ -57,9 +56,8 @@ function renderIdeaCards() {
       </section>
     `
     savedCardsGrid.innerHTML = ideaCardHtml;
-  } //went from updating the Dom card# times to once
+  }
 }
-//
 
 function clearInputFields() {
   cardTitleInput.value = "";
@@ -99,7 +97,7 @@ function toggleIsFavorite(cardId) {
       //use this ID to find the correct key in local storage, reassign the value with the new info
     }
   }
-  renderIdeaCards();
+  renderIdeaCards(savedIdeaCards);
 }
 
 function renderLocalStorageCards() {
@@ -110,7 +108,7 @@ function renderLocalStorageCards() {
     var newIdeaCard = new Idea(item.id, item.title, item.body, item.star)
     savedIdeaCards.push(newIdeaCard);
   }
-  renderIdeaCards();
+  renderIdeaCards(savedIdeaCards);
 }
 
 
@@ -139,43 +137,20 @@ function showStarredIdeas() {
       }
     }
   } else {
-    renderIdeaCards()
+    renderIdeaCards(savedIdeaCards)
   }
   toggleStarredIdeasBtn();
 }
 
 
 function toggleStarredIdeasBtn() {
-  // (showStarredIdeaBtn.innerText === "Show Starred Ideas") ? "Show All Ideas" : "Show Starred Ideas";
-  if (showStarredIdeaBtn.innerText === "Show Starred Ideas") {
-    showStarredIdeaBtn.innerText = "Show All Ideas";
-  } else {
-    showStarredIdeaBtn.innerText = "Show Starred Ideas"
-  }
+  (showStarredIdeaBtn.innerText === "Show Starred Ideas")
+  ? showStarredIdeaBtn.innerText = "Show All Ideas" : showStarredIdeaBtn.innerText = "Show Starred Ideas";
 }
 
 function searchIdeas(e) {
   var searchString = e.target.value.toLowerCase();
   var filteredIdeas = savedIdeaCards.filter(idea =>
     idea.title.toLowerCase().includes(searchString) || idea.body.toLowerCase().includes(searchString));
-  var ideaCardHtml = '';
-  for (var i = 0; i < filteredIdeas.length; i++)  {
-    ideaCardHtml += `
-      <section class="saved-cards" id="${filteredIdeas[i].id}">
-        <div class='favorite-delete'>
-          <img class='favorited-star' src="${filteredIdeas[i].star ? redStarSrc: whiteStarSrc}" alt="favorite star">
-          <img class='delete-card-x' src="https://drive.google.com/uc?export=view&id=1DFdu572EVYb1SXhsXQ0XDqvfZ7prhJWg" alt="delete card x">
-          </div>
-          <article class='idea-title-body'>
-            <p class='idea-card-title'>${filteredIdeas[i].title}</p>
-            <p class='idea-card-body'>${filteredIdeas[i].body}</p>
-          </article>
-        <div class='comment-bar'>
-          <img class='add-comment' src="https://drive.google.com/uc?export=view&id=1xk4FryiJY3UgKdzYQhKdKPBe75ubWaYt" alt="add comment">
-          <span>Comment</span>
-        </div>
-      </section>
-    `
-    savedCardsGrid.innerHTML = ideaCardHtml;
-  }
+  renderIdeaCards(filteredIdeas); 
 }
