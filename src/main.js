@@ -1,31 +1,42 @@
+//**********************Query Selectors**********************//
+
 var cardBodyInput = document.getElementById('userCardBody');
 var cardTitleInput = document.getElementById('userCardTitle');
 var commentForm = document.querySelector('.user-comment-form');
 var commentInputBox = document.querySelector('.user-comment-box');
 var ideaForm = document.querySelector('.user-idea-form')
 var saveCommentBtn = document.querySelector('.add-comment-btn');
-var savedCardsGrid = document.querySelector('.saved-cards-grid')//CHANGED THE ORDER
+var savedCardsGrid = document.querySelector('.saved-cards-grid')
 var saveIdeaBtn = document.getElementById('saveButton');
 var searchBarInput = document.getElementById('searchBar');
 var showStarredIdeaBtn = document.getElementById('starredIdeas');
 var takeBackToMainBtn = document.querySelector('.take-back-to-main');
 
+
+//**********************Event Listeners**********************//
+
 window.addEventListener('load', renderLocalStorageCards)
 ideaForm.addEventListener('keyup', saveBtnStatus);
 saveCommentBtn.addEventListener('click', createNewComment);
 savedCardsGrid.addEventListener('click', targetCardClick);
-saveIdeaBtn.addEventListener('click', createNewIdea);///CHANGE THE ORDER
+saveIdeaBtn.addEventListener('click', createNewIdea);
 showStarredIdeaBtn.addEventListener('click', showStarredIdeas);
 searchBarInput.addEventListener('keyup', searchIdeas);
 takeBackToMainBtn.addEventListener('click', takeBackToMain);
 
+
+//**********************Global Variables**********************//
+
 var savedIdeaCards = [];
-var filteredIdeaCards = [];////CHANGE THE ORDER HERE
+var filteredIdeaCards = [];
 var redStarSrc = "https://drive.google.com/uc?export=view&id=13_jn9vQvAdNzdcbdRmYoR6mBOZHoeqzU";
 var whiteStarSrc = "https://drive.google.com/uc?export=view&id=1TW-aKpR_uBW0Ayp6AtTqVq5cxuX27GiH";
 var startStar = false;
 var commentCardId;
 saveIdeaBtn.disabled = true;
+
+
+//**********************Functions**********************//
 
 function saveBtnStatus() {
   saveIdeaBtn.disabled = (cardBodyInput.value === '' || cardTitleInput.value === '');
@@ -113,6 +124,7 @@ function toggleIsFavorite(cardId) {
   renderIdeaCards(savedIdeaCards);
 }
 
+
 function addComment(cardId) {
   ideaForm.classList.add('hidden');
   commentForm.classList.remove('hidden');
@@ -129,13 +141,15 @@ function createNewComment() {
     }
   }
   renderIdeaCards(savedIdeaCards);
-  //replace span with += commentInputBox.value
   clearInputFields();
 }
+
+
 function displayIdeaForm() {
   ideaForm.classList.remove('hidden');
   commentForm.classList.add('hidden');
 }
+
 
 function renderLocalStorageCards() {
   var ideaCardHtml = '';
