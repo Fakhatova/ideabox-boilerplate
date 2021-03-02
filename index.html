@@ -15,16 +15,21 @@
     </div>
   </aside>
   <main>
-    <form action="" class="user-idea-form">
+    <form class="user-idea-form">
       <label class="title-label" for="title">Title</label>
       <input class="user-input" type="text" name="title" id="userCardTitle">
       <label for="body-label">Body</label>
-      <input class="user-input" type="text" name="body" id="userCardBody">
+      <input class="user-input body-input" type="text" name="body" id="userCardBody">
       <button class="save-idea-btn" id="saveButton">Save</button>
       <div class="search-ideas">
         <img class="magnifying-img" src="https://drive.google.com/uc?export=view&id=1vblRBbEK9Hk8tiqteZ-65a1u2dJGtEDa" alt="search icon">
         <input class="search-cards" id="searchBar" type="text" name="searchBar" placeholder="Search ideas">
       </div>
+    </form>
+    <form class="user-comment-form hidden">
+      <input class="user-comment-box user-input" type="text" name="comment" id="userCommentBox" placeholder="Enter your comment here">
+      <button class="add-comment-btn" id="commentButton">Add Comment</button>
+      <button class="take-back-to-main" id="takeBackToMain">Take Me Back</button>
     </form>
     <div class="saved-cards-grid">
     </div>
