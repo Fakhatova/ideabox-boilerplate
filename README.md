@@ -89,6 +89,10 @@ Throughout the project, one of our focuses will be on providing a fluid and resp
 -----------------------------------------------------------------------------
 
 
-#### Project Repository and Deployed page
+#### Project Repository
 
 https://github.com/sarahlane8/ideabox-boilerplate
+
+#### Deployed Page
+
+https://sarahlane8.github.io/ideabox-boilerplate/
